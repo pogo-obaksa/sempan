@@ -175,12 +175,12 @@
   var CARRY_KIND = {
     deposit: 'money', deposit2: 'money', jeonse: 'money', monthly: 'money', rent: 'money',
     price: 'money', loan: 'money', salary: 'money', salary2: 'money', wage: 'money',
-    income: 'money', asset: 'money', bonus: 'money', principal: 'money',
+    income: 'money', asset: 'money', bonus: 'money', principal: 'money', hourly: 'money',
     rate: 'num', hours: 'num', hours2: 'num', years: 'num', grace: 'num',
     dependents: 'num', kids: 'num', days: 'num', order: 'num', region: 'text', loanType: 'text'
   };
   var CARRY_ORDER = ['deposit', 'deposit2', 'jeonse', 'price', 'monthly', 'rent', 'loan', 'principal',
-    'salary', 'salary2', 'wage', 'income', 'asset', 'bonus', 'rate', 'hours', 'hours2', 'years',
+    'salary', 'salary2', 'wage', 'hourly', 'income', 'asset', 'bonus', 'rate', 'hours', 'hours2', 'years',
     'grace', 'dependents', 'kids', 'days', 'order', 'region', 'loanType'];
 
   function carryFields() {
