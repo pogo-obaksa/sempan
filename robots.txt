@@ -1,0 +1,9 @@
+# 셈판 — 세무·주거 계산노트 (https://pogo-obaksa.github.io/sempan/)
+
+User-agent: *
+Allow: /sempan/
+Disallow: /sempan/preview/
+Disallow: /sempan/tools/
+Disallow: /sempan/tools/_bodies/
+
+Sitemap: https://pogo-obaksa.github.io/sempan/sitemap.xml

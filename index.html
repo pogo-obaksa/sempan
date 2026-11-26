@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>셈판 — 부동산·세무·출산육아·근로금융 계산기 15종 (2026.11.26 기준)</title>
+<meta name="description" content="전월세 전환율·갱신 5% 상한, 카드 소득공제, 전세 vs 반전세, 이사 필요 현금, 청약 가점, 신생아 특례대출, 월세 세액공제, 프리랜서 3.3%, 육아휴직, 부모급여, 육아기 단축급여, 주휴수당, 퇴직금, 대출 상환방식까지. 적용 법령과 기준일, 산출 과정을 함께 공개하는 2026년 기준 계산 노트.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="셈판 — 세무·주거 계산노트 15종">
+<meta property="og:description" content="적용 법령과 기준일, 단계별 산출식을 함께 공개하는 2026년 기준 부동산·세무·출산육아·근로금융 계산기 15종.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "셈판",
+  "alternateName": "세무·주거 계산노트",
+  "description": "2026년 기준 부동산·세무·출산육아·근로금융 계산기 15종",
+  "url": "https://pogo-obaksa.github.io/sempan/",
+  "inLanguage": "ko-KR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "셈판 계산기 15종",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "전월세 전환율 · 5% 갱신 상한", "url": "https://pogo-obaksa.github.io/sempan/jeonwolse.html" },
+    { "@type": "ListItem", "position": 2, "name": "신용카드 · 체크카드 황금비율", "url": "https://pogo-obaksa.github.io/sempan/card-ratio.html" },
+    { "@type": "ListItem", "position": 3, "name": "전세 vs 반전세 손익 비교", "url": "https://pogo-obaksa.github.io/sempan/jeonse-vs-wolse.html" },
+    { "@type": "ListItem", "position": 4, "name": "이사 · 입주 필요 현금", "url": "https://pogo-obaksa.github.io/sempan/move-in-budget.html" },
+    { "@type": "ListItem", "position": 5, "name": "청약 가점 · 특별공급 자가진단", "url": "https://pogo-obaksa.github.io/sempan/subscription-score.html" },
+    { "@type": "ListItem", "position": 6, "name": "맞벌이 부양가족 몰아주기", "url": "https://pogo-obaksa.github.io/sempan/dependent-deduction.html" },
+    { "@type": "ListItem", "position": 7, "name": "월세 세액공제 vs 현금영수증", "url": "https://pogo-obaksa.github.io/sempan/rent-deduction.html" },
+    { "@type": "ListItem", "position": 8, "name": "프리랜서 3.3% 정산", "url": "https://pogo-obaksa.github.io/sempan/freelancer-tax.html" },
+    { "@type": "ListItem", "position": 9, "name": "2026 육아휴직 급여 · 6+6", "url": "https://pogo-obaksa.github.io/sempan/parental-leave.html" },
+    { "@type": "ListItem", "position": 10, "name": "주휴수당 · 알바 실수령액", "url": "https://pogo-obaksa.github.io/sempan/weekly-holiday-pay.html" },
+    { "@type": "ListItem", "position": 11, "name": "신생아 특례대출 자격 · 금리", "url": "https://pogo-obaksa.github.io/sempan/newborn-loan.html" },
+    { "@type": "ListItem", "position": 12, "name": "부모급여 · 아동수당 24개월 총액", "url": "https://pogo-obaksa.github.io/sempan/childcare-support.html" },
+    { "@type": "ListItem", "position": 13, "name": "2026 육아기 근로시간 단축 급여", "url": "https://pogo-obaksa.github.io/sempan/reduced-work-pay.html" },
+    { "@type": "ListItem", "position": 14, "name": "퇴직금 · 퇴직소득세 실수령", "url": "https://pogo-obaksa.github.io/sempan/severance-tax.html" },
+    { "@type": "ListItem", "position": 15, "name": "대출 상환방식 총이자 비교", "url": "https://pogo-obaksa.github.io/sempan/loan-repayment.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link is-current" href="index.html">계산기 전체</a>
+      <a class="nav-link" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<div class="notice-bar" id="notice">
+  <div class="wrap notice-in">
+    <span class="notice-tag">업데이트</span>
+    <span>계산기를 <strong>15종</strong>으로 넓혔습니다 — 신생아 특례대출·부모급여·육아기 단축급여·퇴직금·대출 상환방식 신설. 2026년 최저임금 <strong>10,320원</strong>, 4대보험 <strong>9.72%</strong> 반영.</span>
+    <a class="notice-link" href="childcare-support.html">부모급여 24개월 총액 →</a>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <section class="masthead">
+      <div>
+        <p class="eyebrow">2026년 기준 · 부동산·세무·육아 실무 계산</p>
+        <h1 class="masthead-title">돈이 걸린 계산은,<br>근거까지 같이 봅니다.</h1>
+        <p class="masthead-lede">
+          전월세 전환, 연말정산 공제, 이사 현금, 청약 가점처럼 결과 한 줄로는 판단이 서지 않는 계산을 다룹니다.
+          모든 계산기에 <strong>적용 법령과 기준일</strong>을 표시하고, 결과와 함께
+          <strong>단계별 산출식과 출처</strong>를 공개합니다. 숫자를 바꾸면 근거도 같이 바뀝니다.
+        </p>
+      </div>
+
+      <aside class="factsheet" aria-label="2026.11.26 기준 요약">
+        <div class="factsheet-cap">
+          <span>기준 요약 / REFERENCE</span>
+          <span>2026.11.26</span>
+        </div>
+        <dl>
+          <div class="fact">
+            <dt>한국은행 기준금리</dt>
+            <dd><span class="v">3.25%</span><span class="n">2026.11.26 공표</span></dd>
+          </div>
+          <div class="fact">
+            <dt>법정 전월세전환율 상한</dt>
+            <dd><span class="v">5.25%</span><span class="n">기준금리 + 2.0%p</span></dd>
+          </div>
+          <div class="fact">
+            <dt>2026년 최저임금</dt>
+            <dd><span class="v">10,320원</span><span class="n">월 2,156,880원 · 209시간</span></dd>
+          </div>
+          <div class="fact">
+            <dt>4대보험 근로자 부담</dt>
+            <dd><span class="v">9.72%</span><span class="n">연금 4.75 · 건강 3.595</span></dd>
+          </div>
+          <div class="fact">
+            <dt>카드 소득공제 최저사용</dt>
+            <dd><span class="v">총급여 25%</span><span class="n">조특법 §126의2</span></dd>
+          </div>
+          <div class="fact">
+            <dt>부모급여 (2026)</dt>
+            <dd><span class="v">0세 100만</span><span class="n">1세 50만 · 월 기준</span></dd>
+          </div>
+          <div class="fact">
+            <dt>신생아 특례대출 금리</dt>
+            <dd><span class="v">연 1.8~4.5%</span><span class="n">버팀목 1.3~4.3%</span></dd>
+          </div>
+          <div class="fact">
+            <dt>주택 중개보수 상한</dt>
+            <dd><span class="v">0.3~0.7%</span><span class="n">매매 0.4~0.7 · 임대차 0.3~0.6</span></dd>
+          </div>
+        </dl>
+        <p class="factsheet-foot">법령·고시 개정 시 이 값들을 먼저 갱신하고, 각 계산기의 산출식에 그대로 반영합니다.</p>
+      </aside>
+    </section>
+
+    <section aria-labelledby="dir-title">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" id="dir-title">계산기 디렉터리</h2>
+          <p class="section-desc">부동산·세무·출산육아·근로금융 15종을 모두 공개했습니다. 같은 기준·같은 검수 절차로 산출식과 출처를 관리합니다.</p>
+        </div>
+        <span class="section-count">15종 운영 중</span>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="카테고리 필터">
+        <button class="filter" role="tab" data-filter="all" aria-selected="true">전체 <span class="count">15</span></button>
+        <button class="filter" role="tab" data-filter="realty" aria-selected="false">부동산·임대차 <span class="count">5</span></button>
+        <button class="filter" role="tab" data-filter="tax" aria-selected="false">연말정산·세금 <span class="count">4</span></button>
+        <button class="filter" role="tab" data-filter="care" aria-selected="false">출산·육아 <span class="count">3</span></button>
+        <button class="filter" role="tab" data-filter="work" aria-selected="false">근로·생활금융 <span class="count">3</span></button>
+      </div>
+      <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+
+      <div class="calc-list">
+
+        <article class="calc-row" data-cat="realty">
+          <div class="calc-no">01</div>
+          <div class="calc-body">
+            <h3>전월세 전환율 · 5% 갱신 상한</h3>
+            <p>전세를 반전세로 돌릴 때의 법정 월세와, 계약갱신에서 오를 수 있는 월세 상한을 계산합니다.</p>
+            <div class="calc-meta">주택임대차보호법 §7의2 · 기준금리 3.25% 반영</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">부동산·임대차</span><a class="btn-go" href="jeonwolse.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="tax">
+          <div class="calc-no">02</div>
+          <div class="calc-body">
+            <h3>신용카드 · 체크카드 황금비율</h3>
+            <p>총급여 25% 문턱과 남은 기간 지출 계획으로 소득공제액과 절세액을 비교합니다.</p>
+            <div class="calc-meta">조세특례제한법 §126의2 · 2026년 귀속</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">연말정산·세금</span><a class="btn-go" href="card-ratio.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="realty">
+          <div class="calc-no">03</div>
+          <div class="calc-body">
+            <h3>전세 vs 반전세 손익 비교</h3>
+            <p>전세대출 이자와 월세 세액공제까지 넣어 연간 실질 주거비를 나란히 놓고 봅니다.</p>
+            <div class="calc-meta">주거비 비교 · 세액공제 반영 · 손익분기 월세</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">부동산·임대차</span><a class="btn-go" href="jeonse-vs-wolse.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="realty">
+          <div class="calc-no">04</div>
+          <div class="calc-body">
+            <h3>이사 · 입주 필요 현금</h3>
+            <p>중개보수 법정 상한, 등기·인지세, 보증보험료까지 계약일에 필요한 현금을 한 번에 뽑습니다.</p>
+            <div class="calc-meta">공인중개사법 §32 · 인지세법 §3</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">부동산·임대차</span><a class="btn-go" href="move-in-budget.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="realty">
+          <div class="calc-no">05</div>
+          <div class="calc-body">
+            <h3>청약 가점 · 특별공급 자가진단</h3>
+            <p>84점 만점 가점을 계산하고 신혼·생애최초·신생아 특공 요건을 함께 확인합니다.</p>
+            <div class="calc-meta">주택공급에 관한 규칙 별표1</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">부동산·임대차</span><a class="btn-go" href="subscription-score.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="tax">
+          <div class="calc-no">06</div>
+          <div class="calc-body">
+            <h3>맞벌이 부양가족 몰아주기</h3>
+            <p>부모님·자녀 인적공제를 남편과 아내 중 누구에게 넣을 때 환급이 큰지 비교합니다.</p>
+            <div class="calc-meta">소득세법 §50 · §51 · 지방소득세 포함</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">연말정산·세금</span><a class="btn-go" href="dependent-deduction.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="tax">
+          <div class="calc-no">07</div>
+          <div class="calc-body">
+            <h3>월세 세액공제 vs 현금영수증</h3>
+            <p>요건을 채우지 못한 월세를 현금영수증 소득공제로 돌렸을 때와 비교합니다.</p>
+            <div class="calc-meta">조특법 §95의2 · 총급여 8,000만 이하</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">연말정산·세금</span><a class="btn-go" href="rent-deduction.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="tax">
+          <div class="calc-no">08</div>
+          <div class="calc-body">
+            <h3>프리랜서 3.3% 정산</h3>
+            <p>원천징수된 기납부세액과 결정세액을 비교해 5월 환급액 또는 추가납부액을 가늠합니다.</p>
+            <div class="calc-meta">소득세법 §127 · 경비율·노란우산공제</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">연말정산·세금</span><a class="btn-go" href="freelancer-tax.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="care">
+          <div class="calc-no">09</div>
+          <div class="calc-body">
+            <h3>2026 육아휴직 급여 · 6+6</h3>
+            <p>월별 수령액과 부부 합산 총수령액을 사후지급금 폐지 기준으로 계산합니다.</p>
+            <div class="calc-meta">고용보험법 시행령 §95 · 하한 70만원</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">육아·근로</span><a class="btn-go" href="parental-leave.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="work">
+          <div class="calc-no">10</div>
+          <div class="calc-body">
+            <h3>주휴수당 · 알바 실수령액</h3>
+            <p>주 15시간 기준 주휴수당과 4대보험·3.3% 공제 방식별 실수령액을 비교합니다.</p>
+            <div class="calc-meta">최저임금 10,320원 · 4대보험 9.72%</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">근로·생활금융</span><a class="btn-go" href="weekly-holiday-pay.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="realty">
+          <div class="calc-no">11</div>
+          <div class="calc-body">
+            <h3>신생아 특례대출 자격 · 금리</h3>
+            <p>2년 내 출산 가구의 디딤돌·버팀목 자격을 소득·순자산·주택가격으로 확인하고 월 상환액까지 계산합니다.</p>
+            <div class="calc-meta">주택도시기금 · 디딤돌 1.8~4.5% · 버팀목 1.3~4.3%</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">부동산·임대차</span><a class="btn-go" href="newborn-loan.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="care">
+          <div class="calc-no">12</div>
+          <div class="calc-body">
+            <h3>부모급여 · 아동수당 24개월 총액</h3>
+            <p>부모급여·아동수당·첫만남이용권을 0~23개월 월별로 합산해 현금과 바우처를 나눠 보여 줍니다.</p>
+            <div class="calc-meta">아동수당법 §4 · 2026년 지급액</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">출산·육아</span><a class="btn-go" href="childcare-support.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="care">
+          <div class="calc-no">13</div>
+          <div class="calc-body">
+            <h3>2026 육아기 근로시간 단축 급여</h3>
+            <p>최초 10시간 100%·나머지 80% 개정 기준으로 회사 급여와 정부 급여를 합산합니다.</p>
+            <div class="calc-meta">고용보험법 §75 · 2026.1.1 개정</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">출산·육아</span><a class="btn-go" href="reduced-work-pay.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="work">
+          <div class="calc-no">14</div>
+          <div class="calc-body">
+            <h3>퇴직금 · 퇴직소득세 실수령</h3>
+            <p>법정 퇴직금과 근속연수·환산급여 공제를 적용해 퇴직소득세를 뺀 실수령액을 계산합니다.</p>
+            <div class="calc-meta">근로자퇴직급여보장법 §8 · 소득세법 §48</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">근로·생활금융</span><a class="btn-go" href="severance-tax.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="calc-row" data-cat="work">
+          <div class="calc-no">15</div>
+          <div class="calc-body">
+            <h3>대출 상환방식 총이자 비교</h3>
+            <p>원리금균등·원금균등·만기일시의 첫 달 납입액과 총이자, 절감액을 나란히 비교합니다.</p>
+            <div class="calc-meta">거치기간 반영 · 연차별 잔액</div>
+          </div>
+          <div class="calc-action"><span class="calc-cat">근로·생활금융</span><a class="btn-go" href="loan-repayment.html">계산하기 <span class="arrow">→</span></a></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="method" id="method" aria-label="계산 방식">
+      <div class="method-item">
+        <div class="method-k">01 / 기준일</div>
+        <h4>모든 결과에 기준일을 붙입니다</h4>
+        <p>기준금리·세법·고시가 바뀌면 상수 파일 한 곳에서 갱신해, 페이지마다 같은 값을 쓰도록 관리합니다.</p>
+      </div>
+      <div class="method-item">
+        <div class="method-k">02 / 산출 과정</div>
+        <h4>결과가 나온 경로를 숨기지 않습니다</h4>
+        <p>단계별 계산식에 입력한 값이 그대로 들어가 있습니다. 숫자를 바꾸면 식과 결과가 함께 갱신됩니다.</p>
+      </div>
+      <div class="method-item">
+        <div class="method-k">03 / 출처</div>
+        <h4>원문으로 돌아갈 수 있게 둡니다</h4>
+        <p>국가법령정보센터 조문, 국세청 연말정산 안내, 청약홈·고용24 고시를 계산기마다 연결합니다.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+            <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+            <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+            <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+            <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+            <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+            <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="jeonwolse.html">전월세 전환율 · 5% 상한</a>
+        <a href="card-ratio.html">카드 소득공제 황금비율</a>
+        <a href="jeonse-vs-wolse.html">전세 vs 반전세</a>
+        <a href="move-in-budget.html">이사 · 입주 현금</a>
+        <a href="subscription-score.html">청약 가점 · 특공</a>
+        <a href="newborn-loan.html">신생아 특례대출</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.nts.go.kr/" rel="noopener" target="_blank">국세청</a>
+        <a href="https://www.bok.or.kr/portal/singl/baseRate/list.do?menuNo=200643" rel="noopener" target="_blank">한국은행 기준금리</a>
+        <a href="https://www.work24.go.kr/" rel="noopener" target="_blank">고용24</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 계약·신고·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이사·입주 필요 현금 계산기 · 중개보수·인지세·보증보험료 | 셈판</title>
+<meta name="description" content="계약금 10%, 법정 중개보수 상한, 인지세, 등기 부대비용, 전세보증금반환보증료까지 계약일과 잔금일에 필요한 현금을 계산합니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/move-in-budget.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="이사·입주에 필요한 현금을 한 번에">
+<meta property="og:description" content="계약금 10%, 법정 중개보수 상한, 인지세, 등기 부대비용, 전세보증금반환보증료까지 계약일과 잔금일에 필요한 현금을 계산합니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/move-in-budget.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "이사·입주 필요 현금 총예산 계산기",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/move-in-budget.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "계약금 10%, 법정 중개보수 상한, 인지세, 등기 부대비용, 전세보증금반환보증료까지 계약일과 잔금일에 필요한 현금을 계산합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "중개보수를 상한요율대로 내야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 상한요율은 받을 수 있는 최대치이고, 실제 금액은 그 안에서 중개의뢰인과 협의해 정합니다. 다만 한도액을 넘겨 받을 수는 없고, 부가가치세는 별도입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전세 계약서에도 인지세를 붙이나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "붙이지 않습니다. 인지세법 제3조의 과세문서에 임대차 계약서는 없습니다. 전세자금대출을 받으면 대출 약정서는 5천만원 초과분부터 과세 대상이고, 은행과 고객이 50%씩 부담하는 것이 관행입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "보증보험료는 세입자가 내나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전세보증금반환보증은 세입자가 신청하고 보증료를 냅니다. 보증금액과 부채비율, 할인 대상 여부에 따라 달라지고, 계약기간 전체분을 한 번에 냅니다. 지자체가 보증료 일부를 지원하는 사업도 있으니 거주지 주거복지 안내를 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "오피스텔은 중개보수가 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "다릅니다. 전용 85㎡ 이하이면서 전용입식 부엌·전용수세식 화장실·목욕시설을 갖춘 주거용 오피스텔은 매매 0.5%·임대차 0.4% 상한입니다. 요건을 갖추지 못하면 주택 외 요율(0.9% 이내)이 적용될 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계약금은 꼭 10%인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "관행이 10%일 뿐 법으로 정해져 있지 않습니다. 계약서에 적힌 금액이 기준이고, 매매에서는 계약금을 낮추면 잔금 부담이 커집니다. 계약금을 걸고 해제할 때의 위약금 조항도 함께 확인하세요."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link is-current" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-realty">부동산·임대차</a><span class="sep">/</span>
+      <span>이사 · 입주 필요 현금</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>이사 · 입주 필요 현금</h1>
+      <p class="lede">계약금만 준비하면 되는 줄 알았다가 잔금일에 중개보수·등기비·보증료까지 쏟아지는 경우가 많습니다. 계약일과 잔금일에 각각 얼마가 필요한지, 법정 상한요율과 인지세·보증료까지 넣어 한 번에 계산합니다.</p>
+      <div class="badges">
+        <span class="badge is-law">공인중개사법 §32</span>
+        <span class="badge is-law">인지세법 §3</span>
+        <span class="badge">중개보수 상한요율</span>
+        <span class="badge">HUG 보증료 0.097~0.211%</span>
+      </div>
+    </div>
+
+    <div class="studio">
+
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">금액 단위: 원</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#m-price":"500000000","#m-loan":"300000000","#m-reserve":"1500000","#m-insure":false}' data-preset-click='.segmented button[data-mode="sale"]'>5억 매매</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#m-price":"300000000","#m-loan":"200000000","#m-insure":true,"#m-guarantee-rate":"0.107"}' data-preset-click='.segmented button[data-mode="lease"]'>전세 3억</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#m-price":"10000000","#m-monthly":"600000","#m-loan":"0","#m-insure":true}' data-preset-click='.segmented button[data-mode="monthly"]'>월세 1천/60만</button>
+          </div>
+
+          <div class="segmented" role="tablist" aria-label="거래 유형">
+            <button role="tab" data-mode="sale" aria-selected="true">매매</button>
+            <button role="tab" data-mode="lease" aria-selected="false">전세</button>
+            <button role="tab" data-mode="monthly" aria-selected="false">월세</button>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>주택 유형</span><span>중개보수 요율</span></p>
+            <div class="mini-tabs is-2" role="group" aria-label="주택 유형">
+              <button type="button" data-type="house" aria-selected="true">주택·아파트</button>
+              <button type="button" data-type="officetel" aria-selected="false">오피스텔</button>
+            </div>
+            <p class="help">오피스텔은 매매 0.5%·임대차 0.4% 상한이 적용됩니다.</p>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>거래 조건</span><span>계약서 기준</span></p>
+            <div class="field">
+              <label for="m-price" id="m-price-label">매매가 <span class="unit-hint">매매 계약서상 금액</span></label>
+              <div class="input-wrap">
+                <input id="m-price" type="text" inputmode="numeric" value="500,000,000" autocomplete="off" data-carry="price">
+                <span class="unit">원</span>
+              </div>
+            </div>
+            <div class="field" id="m-monthly-wrap" hidden>
+              <label for="m-monthly">월세</label>
+              <div class="input-wrap">
+                <input id="m-monthly" type="text" inputmode="numeric" value="600,000" autocomplete="off" data-carry="monthly">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">중개보수는 보증금 + 월세 × 100(5천만원 미만이면 × 70)으로 환산한 거래금액에 붙습니다.</p>
+            </div>
+            <div class="field">
+              <label for="m-loan">대출 예정액 <span class="unit-hint">전세자금·주택담보</span></label>
+              <div class="input-wrap">
+                <input id="m-loan" type="text" inputmode="numeric" value="300,000,000" autocomplete="off" data-carry="loan">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">잔금일에 들어오는 금액입니다. 총 필요 현금에서 차감합니다.</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>부대비용</span><span>추정 포함</span></p>
+            <div class="field">
+              <label for="m-reserve">이사·청소·도배 예비비</label>
+              <div class="input-wrap">
+                <input id="m-reserve" type="text" inputmode="numeric" value="1,500,000" autocomplete="off">
+                <span class="unit">원</span>
+              </div>
+            </div>
+            <div class="field" id="m-insure-wrap" hidden>
+              <label class="check-row" for="m-insure">
+                <input id="m-insure" type="checkbox" checked>
+                <span>전세보증금반환보증 가입
+                  <small>보증료는 계약기간 2년치를 한 번에 냅니다.</small>
+                </span>
+              </label>
+            </div>
+            <div class="field" id="m-guarantee-wrap" hidden>
+              <label for="m-guarantee-rate">보증료율 <span class="unit-hint">연 %</span></label>
+              <div class="input-wrap">
+                <input id="m-guarantee-rate" type="text" inputmode="decimal" value="0.107" autocomplete="off">
+                <span class="unit">%</span>
+              </div>
+              <p class="help">HUG 아파트·부채비율 70% 이하 0.097~0.113%, 그 외 주택 0.111~0.132% 수준입니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 필요 현금</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            공인중개사법 시행규칙<br>인지세법 §3 · §6
+          </div>
+        </div>
+        <div class="dashed"></div>
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">지금 필요한 총 현금</span><span id="total-tag">자기자금 + 부대비용</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+        <div class="block-cap"><span>날짜별 필요 현금</span><b>계약일 · 잔금일</b></div>
+        <div style="padding:0 26px 16px">
+          <div class="compare2">
+            <div class="col">
+              <div class="k">계약일</div>
+              <div class="v" id="cmp-contract">0원</div>
+              <div class="d" id="cmp-contract-d"></div>
+            </div>
+            <div class="col">
+              <div class="k">잔금일</div>
+              <div class="v" id="cmp-balance">0원</div>
+              <div class="d" id="cmp-balance-d"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="verdict" id="verdict"><span class="mark">확인</span><span id="verdict-text"></span></div>
+        <div class="report-note">중개보수는 상한요율과 한도액 안에서 협의해 정하는 금액입니다. 취득세·재산세 등 세금과 법무사 보수 실액은 계약 조건에 따라 달라지므로 계약 전에 따로 확인하세요.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="jeonse-vs-wolse.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">전세 vs 반전세 손익 비교</span>
+            <span class="related-desc">계약 형태에 따라 연 주거비가 어떻게 달라지는지 봅니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="newborn-loan.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">신생아 특례대출 자격 · 금리</span>
+            <span class="related-desc">대출 가능액과 월 상환액을 함께 확인합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="loan-repayment.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">대출 상환방식 총이자</span>
+            <span class="related-desc">같은 대출금의 총이자를 방식별로 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>단계별 계산</h3>
+          <p>거래금액에서 시작해 계약금·중개보수·인지세·보증료를 순서대로 붙입니다. 각 단계는 아래 표의 법정 요율을 그대로 씁니다.</p>
+          <div class="formula-box">
+            <span class="cap">총 필요 현금</span>
+            (거래금액 − 대출) + 중개보수(부가세 포함) + 인지세 + 등기·부대비용 + 보증보험료 + 예비비
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">중개보수 요율</div>
+        <div class="detail-body">
+          <h3>2026 현행 상한요율표</h3>
+          <p>2021년 10월 19일 이후 체결한 계약에 적용되는 주택 요율입니다. 상한요율은 최대치이고, 실제 보수는 이 안에서 협의합니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>공인중개사법 시행규칙 별표1 · 주택</caption>
+              <thead>
+                <tr>
+                  <th scope="col">거래</th>
+                  <th scope="col">거래금액</th>
+                  <th scope="col" class="num">상한요율</th>
+                  <th scope="col" class="num">한도액</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td rowspan="6">매매·교환</td><td>5천만원 미만</td><td class="num">0.6%</td><td class="num">25만원</td></tr>
+                <tr><td>5천만~2억원 미만</td><td class="num">0.5%</td><td class="num">80만원</td></tr>
+                <tr><td>2억~9억원 미만</td><td class="num">0.4%</td><td class="num">—</td></tr>
+                <tr><td>9억~12억원 미만</td><td class="num">0.5%</td><td class="num">—</td></tr>
+                <tr><td>12억~15억원 미만</td><td class="num">0.6%</td><td class="num">—</td></tr>
+                <tr><td>15억원 이상</td><td class="num">0.7%</td><td class="num">—</td></tr>
+                <tr><td rowspan="6">임대차 등</td><td>5천만원 미만</td><td class="num">0.5%</td><td class="num">20만원</td></tr>
+                <tr><td>5천만~1억원 미만</td><td class="num">0.4%</td><td class="num">30만원</td></tr>
+                <tr><td>1억~6억원 미만</td><td class="num">0.3%</td><td class="num">—</td></tr>
+                <tr><td>6억~12억원 미만</td><td class="num">0.4%</td><td class="num">—</td></tr>
+                <tr><td>12억~15억원 미만</td><td class="num">0.5%</td><td class="num">—</td></tr>
+                <tr><td>15억원 이상</td><td class="num">0.6%</td><td class="num">—</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4">월세 거래금액 = 보증금 + 월세 × 100. 합산액이 5천만원 미만이면 보증금 + 월세 × 70으로 다시 계산합니다. 부가가치세는 별도입니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">세금·보증료</div>
+        <div class="detail-body">
+          <h3>인지세와 전세보증금반환보증료</h3>
+          <p>인지세는 세율이 아니라 <strong>기재금액 구간별 정액</strong>입니다. 주택 소유권 이전 증서는 1억원 이하 비과세이고, 임대차 계약서는 과세문서가 아닙니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>인지세법 §3 · 주택 소유권 이전 증서</caption>
+              <thead>
+                <tr><th scope="col">기재금액</th><th scope="col" class="num">인지세</th><th scope="col">비고</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1억원 이하</td><td class="num">0원</td><td>주택 비과세 (§6)</td></tr>
+                <tr><td>1억원 초과 ~ 10억원 이하</td><td class="num">15만원</td><td>계약서 1통 기준</td></tr>
+                <tr><td>10억원 초과</td><td class="num">35만원</td><td>2통 작성 시 2배</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:14px">전세보증금반환보증료는 <strong>보증금 × 연 요율 × 계약기간</strong>입니다. HUG 요율은 보증금 구간·주택 유형·부채비율에 따라 연 0.097~0.211%이고, 저소득·다자녀·신혼부부 등은 40~60% 할인이 적용될 수 있습니다.</p>
+          <ul class="sources">
+            <li><span class="src-name">공인중개사법 §32 · 시행규칙 §20 및 별표1·2 (중개보수)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">인지세법 §3 · §6 · §8 (인지세)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">HUG 전세보증금반환보증 보증료율</span><a href="https://www.khug.or.kr/hug/web/ig/dr/igdr000001.jsp" target="_blank" rel="noopener">주택도시보증공사</a></li>
+            <li><span class="src-name">서울시 부동산 중개보수 요율표</span><a href="https://land.seoul.go.kr/land/broker/brokerageCommission.do" target="_blank" rel="noopener">서울시</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>중개보수를 상한요율대로 내야 하나요?</summary>
+              <p class="a">아닙니다. 상한요율은 <strong>받을 수 있는 최대치</strong>이고, 실제 금액은 그 안에서 중개의뢰인과 협의해 정합니다. 다만 한도액을 넘겨 받을 수는 없고, 부가가치세는 별도입니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>전세 계약서에도 인지세를 붙이나요?</summary>
+              <p class="a">붙이지 않습니다. 인지세법 제3조의 과세문서에 <strong>임대차 계약서는 없습니다</strong>. 전세자금대출을 받으면 대출 약정서는 5천만원 초과분부터 과세 대상이고, 은행과 고객이 50%씩 부담하는 것이 관행입니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>보증보험료는 세입자가 내나요?</summary>
+              <p class="a">전세보증금반환보증은 <strong>세입자가 신청하고 보증료를 냅니다</strong>. 보증금액과 부채비율, 할인 대상 여부에 따라 달라지고, 계약기간 전체분을 한 번에 냅니다. 지자체가 보증료 일부를 지원하는 사업도 있으니 거주지 주거복지 안내를 확인하세요.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>오피스텔은 중개보수가 다른가요?</summary>
+              <p class="a">다릅니다. 전용 85㎡ 이하이면서 전용입식 부엌·전용수세식 화장실·목욕시설을 갖춘 주거용 오피스텔은 <strong>매매 0.5%·임대차 0.4%</strong> 상한입니다. 요건을 갖추지 못하면 주택 외 요율(0.9% 이내)이 적용될 수 있습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>계약금은 꼭 10%인가요?</summary>
+              <p class="a">관행이 10%일 뿐 법으로 정해져 있지 않습니다. <strong>계약서에 적힌 금액이 기준</strong>이고, 매매에서는 계약금을 낮추면 잔금 부담이 커집니다. 계약금을 걸고 해제할 때의 위약금 조항도 함께 확인하세요.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 공개된 요율표와 입력값으로 산출한 참고값입니다. 실제 중개보수·인지세·보증료는 계약서 기재금액, 주택 유형, 보증기관 심사, 협의 결과에 따라 달라질 수 있습니다. 계약 전 중개사무소의 요율표와 보증기관 안내를 확인하세요.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">총 필요 현금</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="jeonwolse.html">전월세 전환율 · 5% 상한</a>
+        <a href="jeonse-vs-wolse.html">전세 vs 반전세</a>
+        <a href="subscription-score.html">청약 가점·특공</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.nts.go.kr/" rel="noopener" target="_blank">국세청</a>
+        <a href="https://hometax.go.kr/" rel="noopener" target="_blank">홈택스</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/move-in-budget.js"></script>
+</body>
+</html>

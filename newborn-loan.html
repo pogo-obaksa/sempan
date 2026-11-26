@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>신생아 특례대출 자격 · 금리 · 월 상환액 계산기 (2026) | 셈판</title>
+<meta name="description" content="2026년 신생아 특례대출 자격을 소득(외벌이 1.3억·맞벌이 2억), 순자산(5.11억·3.45억), 주택가격(9억·보증금 5억)으로 확인하고 적용 금리와 월 상환액을 계산합니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/newborn-loan.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="신생아 특례대출 자격·금리 계산">
+<meta property="og:description" content="2026년 신생아 특례대출 자격을 소득(외벌이 1.3억·맞벌이 2억), 순자산(5.11억·3.45억), 주택가격(9억·보증금 5억)으로 확인하고 적용 금리와 월 상환액을 계산합니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/newborn-loan.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "신생아 특례대출 자격 · 금리",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/newborn-loan.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "2026년 신생아 특례대출 자격을 소득(외벌이 1.3억·맞벌이 2억), 순자산(5.11억·3.45억), 주택가격(9억·보증금 5억)으로 확인하고 적용 금리와 월 상환액을 계산합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "출산 시점 요건은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2023년 1월 1일 이후 출생아(입양 포함)가 있는 가구가 대상입니다. 2년 이내 출산 요건을 기준으로 하며, 대출 신청일 기준으로 아이의 주민등록이 함께 등록되어 있어야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "소득 요건은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "외벌이는 부부합산 연소득 1억 3천만원 이하, 맞벌이는 2억원 이하입니다. 맞벌이는 부부 각각의 소득이 1억 3천만원 이하여야 하고, 소득은 건강보험료 기준으로 확인합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "순자산·주택가격 요건도 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "디딤돌(구입)은 순자산 5억 1,100만원 이하·주택가격 9억원 이하, 버팀목(전세)은 순자산 3억 4,500만원 이하·보증금 수도권 5억원(비수도권 4억원) 이하입니다. 둘 다 무주택 세대여야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "금리는 어떻게 정해지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "디딤돌 연 1.8~4.5%, 버팀목 연 1.3~4.3% 범위에서 소득 구간별 기준금리가 정해집니다. 비수도권은 0.2%p 인하되고, 자녀 수·신혼 등 우대금리를 최대 0.5%p 더 받을 수 있습니다. 하한은 디딤돌 1.2%, 버팀목 1.0%입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "대출 한도는 얼마까지인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "디딤돌은 최대 4억원, 버팀목은 최대 2억 4천만원입니다. 주택가격·보증금과 담보인정비율(LTV)에 따라 실제 한도가 더 낮아질 수 있어, 기금e든든에서 본인 조건으로 확인해야 합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link is-current" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-realty">부동산·임대차</a><span class="sep">/</span>
+      <span>신생아 특례대출 자격 · 금리</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>신생아 특례대출 자격 · 금리</h1>
+      <p class="lede">2년 내 출산 가구가 디딤돌·버팀목 대출을 받을 수 있는지 소득·순자산·주택가격 요건으로 확인하고, 적용 금리와 월 상환액까지 계산합니다.</p>
+      <div class="badges">
+        <span class="badge is-law">주택도시기금법</span>
+        <span class="badge">디딤돌 1.8~4.5%</span>
+        <span class="badge">버팀목 1.3~4.3%</span>
+        <span class="badge">한도 4억·2.4억</span>
+      </div>
+    </div>
+
+    <div class="studio">
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">주택도시기금</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#n-type": "didimdol", "#n-income": "60000000", "#n-price": "400000000", "#n-loan": "300000000"}' data-preset-click='.segmented button[data-mode="didimdol"]'>디딤돌 3억</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#n-type": "buteokmok", "#n-loan": "200000000", "#n-years": "10"}' data-preset-click='.segmented button[data-mode="buteokmok"]'>버팀목 2억</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#n-income": "120000000", "#n-dual": "dual", "#n-loan": "400000000"}'>맞벌이 1.2억</button>
+          </div>
+          <div class="segmented" role="tablist" aria-label="대출 종류">
+            <button role="tab" data-mode="didimdol" aria-selected="true">디딤돌 (구입)</button>
+            <button role="tab" data-mode="buteokmok" aria-selected="false">버팀목 (전세)</button>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>가구 요건</span><span>소득·자산</span></p>
+            <div class="field-row">
+              <div class="field">
+                <label for="n-income">부부합산 연소득</label>
+                <div class="input-wrap">
+                  <input id="n-income" type="text" inputmode="numeric" value="60,000,000" autocomplete="off" data-carry="income">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="n-dual">외벌이·맞벌이</label>
+                <select id="n-dual">
+                  <option value="single" selected>외벌이 (1.3억 이하)</option>
+                  <option value="dual">맞벌이 (2억 이하)</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="n-asset">순자산</label>
+              <div class="input-wrap">
+                <input id="n-asset" type="text" inputmode="numeric" value="300,000,000" autocomplete="off" data-carry="asset">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">디딤돌 5억 1,100만원, 버팀목 3억 4,500만원 이하입니다.</p>
+            </div>
+            <div class="field">
+              <label class="check-row" for="n-nohouse">
+                <input type="checkbox" id="n-nohouse" checked>
+                <span>무주택 세대입니다<small>세대원 전원이 주택을 소유하지 않아야 합니다.</small></span>
+              </label>
+            </div>
+            <div class="field">
+              <label class="check-row" for="n-birth">
+                <input type="checkbox" id="n-birth" checked>
+                <span>2년 내 출산 (2023.1.1 이후 출생아)<small>입양아도 포함됩니다.</small></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>주택·대출</span><span>가격·금액·기간</span></p>
+            <div class="field">
+              <label for="n-price" id="n-price-label">주택가격</label>
+              <div class="input-wrap">
+                <input id="n-price" type="text" inputmode="numeric" value="400,000,000" autocomplete="off" data-carry="price">
+                <span class="unit">원</span>
+              </div>
+              <p class="help" id="n-price-help">디딤돌은 주택가격 9억원 이하입니다.</p>
+            </div>
+            <div class="field">
+              <label for="n-region">지역</label>
+              <select id="n-region">
+                <option value="metro" selected>수도권</option>
+                <option value="local">비수도권 (금리 0.2%p 인하)</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="n-loan">대출금액</label>
+                <div class="input-wrap">
+                  <input id="n-loan" type="text" inputmode="numeric" value="300,000,000" autocomplete="off" data-carry="loan">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="n-years">기간</label>
+                <select id="n-years">
+                  <option value="10">10년</option>
+                  <option value="15">15년</option>
+                  <option value="20">20년</option>
+                  <option value="30" selected>30년</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="n-pref">우대금리</label>
+              <select id="n-pref">
+                <option value="0" selected>없음</option>
+                <option value="0.2">자녀 1명 (0.2%p)</option>
+                <option value="0.3">자녀 2명 (0.3%p)</option>
+                <option value="0.5">자녀 3명 이상·신혼 (0.5%p)</option>
+              </select>
+              <p class="help">우대금리는 최대 0.5%p이고, 적용 후에도 하한(디딤돌 1.2%·버팀목 1.0%) 아래로 내려가지 않습니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 자격·금리</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            주택도시기금<br>신생아 특례대출
+          </div>
+        </div>
+        <div class="dashed"></div>
+        
+        <div class="block-cap"><span>자격 체크리스트</span><b>신청일 기준</b></div>
+        <div style="padding:0 26px 10px">
+          <ul class="checklist" id="checklist"></ul>
+        </div>
+
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">월 상환액 (원리금균등)</span><span id="total-tag">연 3% · 30년</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+
+
+        <div class="verdict" id="verdict"><span class="mark">참고</span><span id="verdict-text"></span></div>
+        <div class="report-note">체크리스트에서 하나라도 충족하지 못하면 신청이 어렵습니다. 실제 심사는 기금 수탁은행이 서류로 확인합니다.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="loan-repayment.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">대출 상환방식 총이자 비교</span>
+            <span class="related-desc">같은 금액·금리에서 상환방식별 총이자를 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="move-in-budget.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">이사 · 입주 필요 현금</span>
+            <span class="related-desc">대출을 받아도 필요한 자기자금을 확인합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="subscription-score.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">청약 가점 · 특별공급</span>
+            <span class="related-desc">신생아 특공 요건도 함께 확인하세요.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>자격을 먼저 보고, 금리와 상환액을 계산합니다</h3>
+          <p>소득·순자산·주택가격·출산 요건을 차례로 확인하고, 통과한 경우에만 소득 구간별 기준금리에서 우대금리를 빼 적용 금리를 정합니다. 월 상환액은 원리금균등 방식으로 계산합니다.</p>
+          <div class="formula-box">
+            <span class="cap">적용 금리</span>
+            max(하한, 소득구간 기준금리 − 비수도권 0.2%p − 우대금리)
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">금리 구간</div>
+        <div class="detail-body">
+          <h3>소득별 기준금리</h3>
+          <p>2026년 기준이며, 실제 금리는 수탁은행 심사에서 확정됩니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>부부합산 연소득별 기준금리 (연 %)</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="num">연소득</th>
+                  <th scope="col" class="num">디딤돌</th>
+                  <th scope="col" class="num">버팀목</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="num">2,000만 이하</td><td class="num">1.8</td><td class="num">1.3</td><td>최저 구간</td></tr>
+                <tr><td class="num">4,000만 이하</td><td class="num">2.4</td><td class="num">1.9</td><td></td></tr>
+                <tr class="is-key"><td class="num">6,000만 이하</td><td class="num">3.0</td><td class="num">2.5</td><td>기본 예시</td></tr>
+                <tr><td class="num">8,500만 이하</td><td class="num">3.6</td><td class="num">3.2</td><td></td></tr>
+                <tr><td class="num">1억 이하</td><td class="num">4.1</td><td class="num">3.8</td><td></td></tr>
+                <tr><td class="num">1.3억 이하 (맞벌이 2억)</td><td class="num">4.5</td><td class="num">4.3</td><td>상한</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4">비수도권은 0.2%p 인하, 우대금리 최대 0.5%p. 하한은 디딤돌 1.2%·버팀목 1.0%입니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="detail-block">
+        <div class="detail-label">출처</div>
+        <div class="detail-body">
+          <h3>법령·고시 원문</h3>
+          <p>계산 기준이 되는 조문과 안내 페이지입니다. 개정이 있으면 이 목록의 원문을 먼저 확인하세요.</p>
+          <ul class="sources">
+            <li><span class="src-name">주택도시기금법 (기금 대출 근거)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">주택도시기금 신생아 특례대출 안내</span><a href="https://nhuf.molit.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">HF 주택도시기금 수탁은행 안내</span><a href="https://www.hf.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">기금e든든 대출 한도 조회</span><a href="https://enhuf.molit.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>출산 시점 요건은 어떻게 되나요?</summary>
+              <p class="a">2023년 1월 1일 이후 출생아(입양 포함)가 있는 가구가 대상입니다. 2년 이내 출산 요건을 기준으로 하며, 대출 신청일 기준으로 아이의 주민등록이 함께 등록되어 있어야 합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>소득 요건은 얼마인가요?</summary>
+              <p class="a">외벌이는 부부합산 연소득 1억 3천만원 이하, 맞벌이는 2억원 이하입니다. 맞벌이는 부부 각각의 소득이 1억 3천만원 이하여야 하고, 소득은 건강보험료 기준으로 확인합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>순자산·주택가격 요건도 있나요?</summary>
+              <p class="a">디딤돌(구입)은 순자산 5억 1,100만원 이하·주택가격 9억원 이하, 버팀목(전세)은 순자산 3억 4,500만원 이하·보증금 수도권 5억원(비수도권 4억원) 이하입니다. 둘 다 무주택 세대여야 합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>금리는 어떻게 정해지나요?</summary>
+              <p class="a">디딤돌 연 1.8~4.5%, 버팀목 연 1.3~4.3% 범위에서 소득 구간별 기준금리가 정해집니다. 비수도권은 0.2%p 인하되고, 자녀 수·신혼 등 우대금리를 최대 0.5%p 더 받을 수 있습니다. 하한은 디딤돌 1.2%, 버팀목 1.0%입니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>대출 한도는 얼마까지인가요?</summary>
+              <p class="a">디딤돌은 최대 4억원, 버팀목은 최대 2억 4천만원입니다. 주택가격·보증금과 담보인정비율(LTV)에 따라 실제 한도가 더 낮아질 수 있어, 기금e든든에서 본인 조건으로 확인해야 합니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 2026년 신생아 특례대출 공시 기준으로 산출한 참고값입니다. 실제 금리·한도·자격은 수탁은행 심사와 기금 운용 기준에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">월 상환액</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="jeonwolse.html">전월세 전환율 · 5% 상한</a>
+        <a href="newborn-loan.html">신생아 특례대출</a>
+        <a href="childcare-support.html">부모급여 · 아동수당</a>
+        <a href="severance-tax.html">퇴직금 실수령</a>
+        <a href="loan-repayment.html">대출 상환방식</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.nts.go.kr/" rel="noopener" target="_blank">국세청</a>
+        <a href="https://www.work24.go.kr/" rel="noopener" target="_blank">고용24</a>
+        <a href="https://nhuf.molit.go.kr/" rel="noopener" target="_blank">주택도시기금</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/newborn-loan.js"></script>
+</body>
+</html>

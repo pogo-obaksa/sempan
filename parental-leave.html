@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 육아휴직 급여 계산기 · 6+6 부모육아휴직제 | 셈판</title>
+<meta name="description" content="통상임금과 휴직 개월 수로 1~3개월 250만·4~6개월 200만·7개월~ 160만원 상한과 70만원 하한을 적용한 월별 수령액, 6+6 부모육아휴직제 총액을 계산합니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/parental-leave.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="2026 육아휴직 급여, 월별로 얼마">
+<meta property="og:description" content="통상임금과 휴직 개월 수로 1~3개월 250만·4~6개월 200만·7개월~ 160만원 상한과 70만원 하한을 적용한 월별 수령액, 6+6 부모육아휴직제 총액을 계산합니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/parental-leave.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "2026 육아휴직 급여 · 6+6 계산기",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/parental-leave.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "통상임금과 휴직 개월 수로 1~3개월 250만·4~6개월 200만·7개월~ 160만원 상한과 70만원 하한을 적용한 월별 수령액, 6+6 부모육아휴직제 총액을 계산합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "사후지급금이 없어졌다는데, 복직하지 않아도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2025년 1월 1일 이후 휴직분부터 사후지급금 제도가 폐지되어 급여의 25%를 떼어 두지 않습니다. 휴직 중에 받은 급여는 그대로 최종 수령액이 되고, 복직 후 근무 조건과 무관합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "+6은 부부가 동시에 휴직해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 자녀가 생후 18개월 안일 때 부모가 동시 또는 순차적으로 육아휴직을 쓰면 적용됩니다. 부모 각각의 첫 6개월 상한이 250·250·300·350·400·450만원으로 올라가고, 7개월째부터는 일반 기준으로 돌아갑니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "한부모는 얼마나 더 받나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "한부모가족지원법상 한부모는 첫 3개월 상한이 300만원으로 일반(250만원)보다 50만원 높습니다. 4개월째부터는 일반과 같은 200만원, 7개월 이후 160만원 상한이 적용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "통상임금은 어떻게 정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "기본급과 매달 정기적·일률적으로 지급하기로 정한 수당을 기준으로 합니다. 2024년 말 대법원 판결로 '고정성' 요건이 폐기되어, 정기상여금 등도 통상임금에 포함될 수 있습니다. 회사 규정과 급여명세서를 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "개월을 넘겨 1년 6개월을 쓰면 급여는?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "13개월째부터도 7개월 이후와 같은 기준(통상임금 80%, 월 160만원 상한, 70만원 하한)이 이어집니다. 이 계산기는 12개월까지만 표시하지만, 연장 6개월분도 같은 방식으로 계산하면 됩니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link is-current" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-care">출산·육아</a><span class="sep">/</span>
+      <span>2026 육아휴직 급여 · 6+6</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>2026 육아휴직 급여 · 6+6</h1>
+      <p class="lede">육아휴직 급여는 통상임금의 80~100%에 상한과 하한을 적용한 금액입니다. 휴직 개월 수에 따라 상한이 250만→200만→160만원으로 내려가고, 6+6 부모육아휴직제는 부모 각각 첫 6개월 상한을 450만원까지 올려줍니다.</p>
+      <div class="badges">
+        <span class="badge is-law">고용보험법 시행령 §95</span>
+        <span class="badge">사후지급금 폐지 (2025.1.1~)</span>
+        <span class="badge">월 하한 70만원</span>
+        <span class="badge">6+6 상한 450만원</span>
+      </div>
+    </div>
+
+    <div class="studio">
+
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">휴직 개시일 기준</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#p-wage":"3000000","#p-months":"12"}' data-preset-click='.segmented button[data-mode="general"]'>300만·12개월</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#p-wage":"3000000","#p-months":"12"}' data-preset-click='.segmented button[data-mode="six"]'>6+6 부모</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#p-wage":"3000000","#p-months":"6"}' data-preset-click='.segmented button[data-mode="single"]'>한부모 6개월</button>
+          </div>
+
+          <div class="segmented" role="tablist" aria-label="휴직 유형">
+            <button role="tab" data-mode="general" aria-selected="true">일반</button>
+            <button role="tab" data-mode="single" aria-selected="false">한부모</button>
+            <button role="tab" data-mode="six" aria-selected="false">6+6</button>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>급여 기준</span><span>휴직 개시일 통상임금</span></p>
+            <div class="field">
+              <label for="p-wage">월 통상임금</label>
+              <div class="input-wrap">
+                <input id="p-wage" type="text" inputmode="numeric" value="3,000,000" autocomplete="off" data-carry="wage">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">기본급과 매달 정해진 수당을 기준으로 합니다. 성과급·연장근로수당은 보통 빠집니다.</p>
+            </div>
+            <div class="field">
+              <label for="p-months">휴직 개월 수</label>
+              <select id="p-months">
+                <option value="3">3개월</option>
+                <option value="6">6개월</option>
+                <option value="9">9개월</option>
+                <option value="12" selected>12개월</option>
+              </select>
+              <p class="help">최대 1년 6개월까지 쓸 수 있고, 7개월째부터는 통상임금 80%·160만원 상한이 적용됩니다.</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>유형 안내</span><span>2026년</span></p>
+            <p class="help" id="mode-help">일반: 1~3개월 250만원, 4~6개월 200만원, 7개월~ 160만원 상한.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 육아휴직 급여</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            고용보험법 시행령 §95<br>사후지급금 폐지 반영
+          </div>
+        </div>
+        <div class="dashed"></div>
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">휴직 중 총 수령액</span><span id="total-tag">일반 육아휴직</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+        <div class="verdict" id="verdict"><span class="mark">적합</span><span id="verdict-text"></span></div>
+        <div class="report-note">휴직 급여는 고용센터 신청·심사로 지급됩니다. 회사 규정의 육아휴직 수당이 별도로 있으면 급여와 함께 확인하세요.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="childcare-support.html">
+            <span class="related-k">출산·육아</span>
+            <span class="related-name">부모급여 · 아동수당 총액</span>
+            <span class="related-desc">휴직 중 함께 받는 양육 지원금을 계산합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="reduced-work-pay.html">
+            <span class="related-k">출산·육아</span>
+            <span class="related-name">육아기 근로시간 단축 급여</span>
+            <span class="related-desc">복직 후 단축 근로의 급여를 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="weekly-holiday-pay.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">주휴수당 · 알바 실수령</span>
+            <span class="related-desc">휴직 전 단기 근로의 실수령액을 확인합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>단계별 계산</h3>
+          <p>개월 차에 따라 지급률과 상한을 먼저 정하고, 통상임금에 지급률을 곱한 금액과 상한 중 작은 값을 씁니다. 그 값이 70만원보다 작으면 하한 70만원을 적용합니다.</p>
+          <div class="formula-box">
+            <span class="cap">월 급여</span>
+            max(70만원, min(통상임금 × 지급률, 해당 월 상한))
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 5단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">월별 수령액</div>
+        <div class="detail-body">
+          <h3>개월 차별 금액</h3>
+          <p>상한이 적용된 달은 강조 표시됩니다. 실제 지급은 매월 신청하며, 1개월을 채우지 못한 기간은 일수로 나눠 계산합니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>2026년 육아휴직 급여 · 사후지급금 없이 전액 지급</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="num">개월</th>
+                  <th scope="col" class="num">지급률</th>
+                  <th scope="col" class="num">월 상한</th>
+                  <th scope="col" class="num">수령액</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody id="month-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">상한 표</div>
+        <div class="detail-body">
+          <h3>유형별 월 상한</h3>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th scope="col">기간</th>
+                  <th scope="col" class="num">일반</th>
+                  <th scope="col" class="num">한부모</th>
+                  <th scope="col" class="num">6+6 (부모 각각)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1개월</td><td class="num">250만</td><td class="num">300만</td><td class="num">250만</td></tr>
+                <tr><td>2개월</td><td class="num">250만</td><td class="num">300만</td><td class="num">250만</td></tr>
+                <tr><td>3개월</td><td class="num">250만</td><td class="num">300만</td><td class="num">300만</td></tr>
+                <tr><td>4개월</td><td class="num">200만</td><td class="num">200만</td><td class="num">350만</td></tr>
+                <tr><td>5개월</td><td class="num">200만</td><td class="num">200만</td><td class="num">400만</td></tr>
+                <tr><td>6개월</td><td class="num">200만</td><td class="num">200만</td><td class="num">450만</td></tr>
+                <tr><td>7개월~</td><td class="num">160만</td><td class="num">160만</td><td class="num">160만</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4">모든 구간에 월 하한 70만원이 적용됩니다. 1~6개월은 통상임금 100%, 7개월부터는 80% 기준입니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">법령 · 출처</div>
+        <div class="detail-body">
+          <h3>근거와 확인 지점</h3>
+          <ul class="sources">
+            <li><span class="src-name">고용보험법 시행령 §95 (육아휴직 급여)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">고용24 육아휴직급여 안내</span><a href="https://www.work24.go.kr/" target="_blank" rel="noopener">고용24</a></li>
+            <li><span class="src-name">부모 함께 육아휴직제(6+6) 안내</span><a href="https://www.work24.go.kr/" target="_blank" rel="noopener">고용노동부</a></li>
+            <li><span class="src-name">남녀고용평등법 §19 (육아휴직)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+          </ul>
+          <p style="margin-top:16px">육아휴직 급여를 받으려면 휴직 개시일 기준 고용보험 피보험 단위기간이 180일 이상이어야 하고, 같은 자녀에 대해 30일 이상 휴직해야 합니다. 2025년 1월 1일 이후 휴직분은 사후지급금 제도가 폐지되어 매달 전액 지급됩니다.</p>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>사후지급금이 없어졌다는데, 복직하지 않아도 되나요?</summary>
+              <p class="a">2025년 1월 1일 이후 휴직분부터 <strong>사후지급금 제도가 폐지</strong>되어 급여의 25%를 떼어 두지 않습니다. 휴직 중에 받은 급여는 그대로 최종 수령액이 되고, 복직 후 근무 조건과 무관합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>6+6은 부부가 동시에 휴직해야 하나요?</summary>
+              <p class="a">아닙니다. 자녀가 생후 18개월 안일 때 부모가 <strong>동시 또는 순차적으로</strong> 육아휴직을 쓰면 적용됩니다. 부모 각각의 첫 6개월 상한이 250·250·300·350·400·450만원으로 올라가고, 7개월째부터는 일반 기준으로 돌아갑니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>한부모는 얼마나 더 받나요?</summary>
+              <p class="a">한부모가족지원법상 한부모는 <strong>첫 3개월 상한이 300만원</strong>으로 일반(250만원)보다 50만원 높습니다. 4개월째부터는 일반과 같은 200만원, 7개월 이후 160만원 상한이 적용됩니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>통상임금은 어떻게 정하나요?</summary>
+              <p class="a">기본급과 매달 정기적·일률적으로 지급하기로 정한 수당을 기준으로 합니다. 2024년 말 대법원 판결로 '고정성' 요건이 폐기되어, 정기상여금 등도 통상임금에 포함될 수 있습니다. 회사 규정과 급여명세서를 확인하세요.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>12개월을 넘겨 1년 6개월을 쓰면 급여는?</summary>
+              <p class="a">13개월째부터도 <strong>7개월 이후와 같은 기준</strong>(통상임금 80%, 월 160만원 상한, 70만원 하한)이 이어집니다. 이 계산기는 12개월까지만 표시하지만, 연장 6개월분도 같은 방식으로 계산하면 됩니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 2026년 고용보험법 시행령과 입력한 통상임금으로 산출한 참고값입니다. 실제 지급액은 고용센터의 통상임금·피보험기간 심사와 휴직 일수에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">총 수령액</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="weekly-holiday-pay.html">주휴수당·알바 실수령</a>
+        <a href="dependent-deduction.html">부양가족 몰아주기</a>
+        <a href="rent-deduction.html">월세 세액공제 비교</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.work24.go.kr/" rel="noopener" target="_blank">고용24</a>
+        <a href="https://www.minimumwage.go.kr/" rel="noopener" target="_blank">최저임금위원회</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/parental-leave.js"></script>
+</body>
+</html>

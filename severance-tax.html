@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퇴직금 · 퇴직소득세 실수령액 계산기 (2026) | 셈판</title>
+<meta name="description" content="재직일수와 월 평균급여로 법정 퇴직금을 계산하고, 근속연수공제(2023년 상향)·환산급여공제·기본세율을 적용해 퇴직소득세와 지방소득세를 뺀 세후 실수령액을 보여 줍니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/severance-tax.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="퇴직금·퇴직소득세 실수령 계산">
+<meta property="og:description" content="재직일수와 월 평균급여로 법정 퇴직금을 계산하고, 근속연수공제(2023년 상향)·환산급여공제·기본세율을 적용해 퇴직소득세와 지방소득세를 뺀 세후 실수령액을 보여 줍니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/severance-tax.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "퇴직금 · 퇴직소득세 실수령",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/severance-tax.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "재직일수와 월 평균급여로 법정 퇴직금을 계산하고, 근속연수공제(2023년 상향)·환산급여공제·기본세율을 적용해 퇴직소득세와 지방소득세를 뺀 세후 실수령액을 보여 줍니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "퇴직금을 받을 수 있는 조건은?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1년 이상 계속 근로하고, 4주 평균 주 15시간 이상 일한 근로자에게 퇴직금이 발생합니다. 수습기간도 계속 근로로 봅니다. 1년 미만이면 법정 퇴직금은 없고, 회사 규정에 따라 다를 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1일 평균임금은 어떻게 구하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "퇴직 전 3개월 임금총액을 그 기간의 총일수로 나눈 값입니다. 이 계산기는 월 평균급여를 30.4167일(365÷12)로 나눠 근사합니다. 상여금·연차수당이 있으면 3개월분에 포함해 계산해야 정확합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "퇴직소득세가 근로소득세보다 적은 이유는?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "근속연수공제와 환산급여공제를 먼저 빼고, 남은 금액을 12개월로 환산해 기본세율을 적용한 뒤 다시 근속연수로 나누기 때문입니다. 오래 일할수록 공제가 커져 세 부담이 줄어듭니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IRP로 받으면 세금이 달라지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "퇴직금을 IRP 계좌로 받으면 당장 과세되지 않고, 연금으로 수령할 때 연금소득세(3~5%)로 낮아질 수 있습니다. 중도 인출하거나 연금 외로 받으면 퇴직소득세가 부과됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "퇴직금 중간정산이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "무주택자 주택구입, 전세보증금, 6개월 이상 요양 등 법정 사유가 있을 때만 가능합니다. 2012년 이후 중간정산은 사유별로 1회로 제한되고, 정산하면 그 이후 기간으로 퇴직금을 다시 계산합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link is-current" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-work">근로·생활금융</a><span class="sep">/</span>
+      <span>퇴직금 · 퇴직소득세 실수령</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>퇴직금 · 퇴직소득세 실수령</h1>
+      <p class="lede">재직일수와 월 평균급여로 법정 퇴직금을 구하고, 근속연수공제·환산급여공제와 기본세율을 적용해 퇴직소득세와 지방소득세를 뺀 실수령액을 계산합니다.</p>
+      <div class="badges">
+        <span class="badge is-law">근로자퇴직급여보장법 §8</span>
+        <span class="badge is-law">소득세법 §48</span>
+        <span class="badge">2023년 공제 상향</span>
+        <span class="badge">지방소득세 포함</span>
+      </div>
+    </div>
+
+    <div class="studio">
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">근로자퇴직급여보장법</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#s-days": "1826", "#s-wage": "3000000"}'>5년 근속·월 300만</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#s-days": "3650", "#s-wage": "4000000", "#s-bonus": "6000000"}'>10년·월 400만</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#s-days": "730", "#s-wage": "2500000"}'>2년 근속</button>
+          </div>
+          <div class="segmented is-2" role="tablist" aria-label="재직기간 입력 방식">
+            <button role="tab" data-mode="days" aria-selected="true">재직일수 직접 입력</button>
+            <button role="tab" data-mode="dates" aria-selected="false">입사·퇴사일</button>
+          </div>
+
+          <div data-pane="days">
+            <div class="field">
+              <label for="s-days">재직일수</label>
+              <div class="input-wrap">
+                <input id="s-days" type="text" inputmode="numeric" value="1,826" autocomplete="off" data-carry="days">
+                <span class="unit">일</span>
+              </div>
+              <p class="help">1,826일이 5년입니다(365 × 5 + 윤년 1일).</p>
+            </div>
+          </div>
+          <div data-pane="dates" hidden>
+            <div class="field-row">
+              <div class="field">
+                <label for="s-start">입사일</label>
+                <div class="input-wrap">
+                  <input id="s-start" type="date" value="2021-01-01">
+                </div>
+              </div>
+              <div class="field">
+                <label for="s-end">퇴사일</label>
+                <div class="input-wrap">
+                  <input id="s-end" type="date" value="2026-01-01">
+                </div>
+              </div>
+            </div>
+            <p class="help">퇴사일까지의 일수로 근속기간을 계산합니다.</p>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>급여 기준</span><span>3개월 평균</span></p>
+            <div class="field">
+              <label for="s-wage">월 평균급여</label>
+              <div class="input-wrap">
+                <input id="s-wage" type="text" inputmode="numeric" value="3,000,000" autocomplete="off" data-carry="wage">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">기본급·고정수당을 포함한 세전 금액입니다.</p>
+            </div>
+            <div class="field">
+              <label for="s-bonus">연간 상여금 <span class="unit-hint">선택</span></label>
+              <div class="input-wrap">
+                <input id="s-bonus" type="text" inputmode="numeric" value="0" autocomplete="off" data-carry="bonus">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">연간 상여금 총액의 3/12을 평균임금에 더합니다.</p>
+            </div>
+            <div class="field">
+              <label for="s-exec">근로자 구분</label>
+              <select id="s-exec">
+                <option value="worker" selected>일반 근로자</option>
+                <option value="exec">임원 (정관·주총 결의)</option>
+              </select>
+              <p class="help">임원은 정관이나 주주총회 결의로 정한 퇴직급여 한도가 적용될 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 퇴직 실수령</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            근로자퇴직급여보장법 §8<br>소득세법 §48·§55
+          </div>
+        </div>
+        <div class="dashed"></div>
+        
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">세후 실수령액</span><span id="total-tag">근속 5.0년</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+
+        <div class="block-cap"><span>세전 · 세후</span><b>퇴직 시점</b></div>
+        <div style="padding:0 26px 16px">
+          <div class="compare2">
+            <div class="col" id="cmp-gross">
+              <div class="k">법정 퇴직금 (세전)</div>
+              <div class="v" id="cmp-gross-v">0원</div>
+              <div class="d" id="cmp-gross-d"></div>
+            </div>
+            <div class="col" id="cmp-net">
+              <div class="k">세후 실수령액</div>
+              <div class="v" id="cmp-net-v">0원</div>
+              <div class="d" id="cmp-net-d"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="verdict" id="verdict"><span class="mark">참고</span><span id="verdict-text"></span></div>
+        <div class="report-note">퇴직소득세는 근속연수공제·환산급여공제를 적용한 뒤 12개월로 환산해 계산합니다. 지방소득세 10%를 함께 표시합니다.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="weekly-holiday-pay.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">주휴수당 · 알바 실수령</span>
+            <span class="related-desc">퇴직 전 급여와 수당을 함께 확인합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="freelancer-tax.html">
+            <span class="related-k">연말정산·세금</span>
+            <span class="related-name">프리랜서 3.3% 정산</span>
+            <span class="related-desc">사업소득으로 정산할 때의 세금을 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="loan-repayment.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">대출 상환방식 총이자</span>
+            <span class="related-desc">퇴직금으로 대출을 갚을 때의 이자를 봅니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>퇴직금과 퇴직소득세를 순서대로 계산합니다</h3>
+          <p>퇴직금은 1일 평균임금 × 30일 × 근속연수로 구하고, 세금은 근속연수공제와 환산급여공제를 뺀 과세표준에 기본세율을 적용한 뒤 12개월로 환산했다가 다시 근속연수로 곱합니다.</p>
+          <div class="formula-box">
+            <span class="cap">퇴직소득세</span>
+            ((환산급여 − 환산급여공제) × 기본세율 − 누진공제) ÷ 12 × 근속연수 × 1.1 (지방소득세 포함)
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">공제 표</div>
+        <div class="detail-body">
+          <h3>근속연수공제 · 환산급여공제</h3>
+          <p>2023년 상향된 근속연수공제와 환산급여공제를 적용합니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>퇴직소득 공제 구간</caption>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col" class="num">구간</th>
+                  <th scope="col" class="num">공제액</th>
+                  <th scope="col">근거</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>근속연수공제</td><td class="num">5년 이하</td><td class="num">연 100만원</td><td>소득세법 §48</td></tr>
+                <tr><td>근속연수공제</td><td class="num">10년 이하</td><td class="num">500만 + 200만×(년−5)</td><td>소득세법 §48</td></tr>
+                <tr><td>근속연수공제</td><td class="num">20년 이하</td><td class="num">1,500만 + 250만×(년−10)</td><td>소득세법 §48</td></tr>
+                <tr><td>근속연수공제</td><td class="num">20년 초과</td><td class="num">4,000만 + 300만×(년−20)</td><td>소득세법 §48</td></tr>
+                <tr><td>환산급여공제</td><td class="num">800만 이하</td><td class="num">100%</td><td>소득세법 §48</td></tr>
+                <tr><td>환산급여공제</td><td class="num">7,000만 이하</td><td class="num">800만 + 60%</td><td>소득세법 §48</td></tr>
+                <tr class="is-key"><td>환산급여공제</td><td class="num">1억 이하</td><td class="num">4,520만 + 55%</td><td>소득세법 §48</td></tr>
+                <tr><td>환산급여공제</td><td class="num">3억 이하</td><td class="num">6,170만 + 45%</td><td>소득세법 §48</td></tr>
+                <tr><td>환산급여공제</td><td class="num">3억 초과</td><td class="num">1억 5,170만 + 35%</td><td>소득세법 §48</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4">근속연수가 1년 미만이면 1년으로 보고 계산합니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="detail-block">
+        <div class="detail-label">출처</div>
+        <div class="detail-body">
+          <h3>법령·고시 원문</h3>
+          <p>계산 기준이 되는 조문과 안내 페이지입니다. 개정이 있으면 이 목록의 원문을 먼저 확인하세요.</p>
+          <ul class="sources">
+            <li><span class="src-name">근로자퇴직급여보장법 §8 (퇴직금)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">소득세법 §48 (퇴직소득 공제)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">소득세법 §55 (세율)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+            <li><span class="src-name">국세청 퇴직소득세 안내</span><a href="https://www.nts.go.kr/" target="_blank" rel="noopener">원문 보기</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>퇴직금을 받을 수 있는 조건은?</summary>
+              <p class="a">1년 이상 계속 근로하고, 4주 평균 주 15시간 이상 일한 근로자에게 퇴직금이 발생합니다. 수습기간도 계속 근로로 봅니다. 1년 미만이면 법정 퇴직금은 없고, 회사 규정에 따라 다를 수 있습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>1일 평균임금은 어떻게 구하나요?</summary>
+              <p class="a">퇴직 전 3개월 임금총액을 그 기간의 총일수로 나눈 값입니다. 이 계산기는 월 평균급여를 30.4167일(365÷12)로 나눠 근사합니다. 상여금·연차수당이 있으면 3개월분에 포함해 계산해야 정확합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>퇴직소득세가 근로소득세보다 적은 이유는?</summary>
+              <p class="a">근속연수공제와 환산급여공제를 먼저 빼고, 남은 금액을 12개월로 환산해 기본세율을 적용한 뒤 다시 근속연수로 나누기 때문입니다. 오래 일할수록 공제가 커져 세 부담이 줄어듭니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>IRP로 받으면 세금이 달라지나요?</summary>
+              <p class="a">퇴직금을 IRP 계좌로 받으면 당장 과세되지 않고, 연금으로 수령할 때 연금소득세(3~5%)로 낮아질 수 있습니다. 중도 인출하거나 연금 외로 받으면 퇴직소득세가 부과됩니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>퇴직금 중간정산이 가능한가요?</summary>
+              <p class="a">무주택자 주택구입, 전세보증금, 6개월 이상 요양 등 법정 사유가 있을 때만 가능합니다. 2012년 이후 중간정산은 사유별로 1회로 제한되고, 정산하면 그 이후 기간으로 퇴직금을 다시 계산합니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 법정 퇴직금과 퇴직소득세를 단순화해 산출한 참고값입니다. 실제 퇴직금은 평균임금 산정(3개월 임금총액)과 취업규칙에 따라, 세액은 연금 수령 방식에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">세후 실수령액</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="jeonwolse.html">전월세 전환율 · 5% 상한</a>
+        <a href="newborn-loan.html">신생아 특례대출</a>
+        <a href="childcare-support.html">부모급여 · 아동수당</a>
+        <a href="severance-tax.html">퇴직금 실수령</a>
+        <a href="loan-repayment.html">대출 상환방식</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.nts.go.kr/" rel="noopener" target="_blank">국세청</a>
+        <a href="https://www.work24.go.kr/" rel="noopener" target="_blank">고용24</a>
+        <a href="https://nhuf.molit.go.kr/" rel="noopener" target="_blank">주택도시기금</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/severance-tax.js"></script>
+</body>
+</html>

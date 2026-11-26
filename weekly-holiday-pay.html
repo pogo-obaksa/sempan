@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주휴수당 · 알바 실수령액 계산기 (2026 최저임금 10,320원) | 셈판</title>
+<meta name="description" content="2026년 최저시급 10,320원과 주 15시간 기준 주휴수당을 적용해 주급·월급(4.345주)을 구하고 4대보험 9.72%와 3.3% 공제 실수령액을 비교합니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/weekly-holiday-pay.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="주휴수당과 4대보험·3.3% 실수령 비교">
+<meta property="og:description" content="2026년 최저시급 10,320원과 주 15시간 기준 주휴수당을 적용해 주급·월급(4.345주)을 구하고 4대보험 9.72%와 3.3% 공제 실수령액을 비교합니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/weekly-holiday-pay.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "주휴수당 · 알바 실수령액 비교기",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/weekly-holiday-pay.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "2026년 최저시급 10,320원과 주 15시간 기준 주휴수당을 적용해 주급·월급(4.345주)을 구하고 4대보험 9.72%와 3.3% 공제 실수령액을 비교합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "주휴수당은 어떤 조건에서 나오나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주 15시간 이상 근무하고 그 주의 소정근로일을 개근하면 발생합니다. 주 15시간 미만이면 근로기준법상 주휴수당이 없습니다. 4주 평균으로 판단하므로, 한 주만 15시간을 넘긴 경우는 확인이 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "주 15시간 미만이면 주휴수당을 못 받나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "근로기준법상 주휴수당은 발생하지 않습니다. 다만 회사 취업규칙이나 근로계약에서 별도로 정했다면 받을 수 있습니다. 초단시간 근로자는 4대보험 가입 기준도 다르므로 함께 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "대보험과 3.3% 중 어느 쪽이 유리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "당장 받는 금액은 3.3%가 더 많습니다(9.72% 대 3.3%). 하지만 3.3%는 사업소득 원천징수라 국민연금·건강보험 가입이 아니고, 5월에 종합소득세로 정산해야 합니다. 근로자 신분이면 4대보험이 원칙입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "최저임금보다 적게 받으면 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "최저임금에 못 미치는 임금은 무효이고, 최저임금액을 받기로 한 것으로 봅니다. 차액을 청구할 수 있으며, 사업주는 3년 이하 징역 또는 2천만원 이하 벌금 대상입니다. 임금체불은 고용노동부 진정으로 접수할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "월급을 209시간으로 계산하는 이유는?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주 40시간 근무에 유급주휴 8시간을 더한 48시간에, 한 달 평균 주 수 4.345를 곱하면 208.56시간이 됩니다. 이를 반올림해 209시간을 월 환산 기준시간으로 씁니다. 이 계산기는 알바처럼 주 시간이 짧은 경우 4.345주를 직접 곱합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link is-current" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-work">근로·생활금융</a><span class="sep">/</span>
+      <span>주휴수당 · 알바 실수령액</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>주휴수당 · 알바 실수령액</h1>
+      <p class="lede">주 15시간 이상 일하면 주휴수당이 붙고, 4대보험과 3.3% 중 어느 방식으로 공제되느냐에 따라 통장에 들어오는 금액이 달라집니다. 2026년 최저시급 10,320원 기준으로 주급·월급과 실수령액을 계산합니다.</p>
+      <div class="badges">
+        <span class="badge is-law">근로기준법 §55</span>
+        <span class="badge is-law">최저임금법</span>
+        <span class="badge">2026 최저시급 10,320원</span>
+        <span class="badge">4대보험 9.72%</span>
+      </div>
+    </div>
+
+    <div class="studio">
+
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">2026년 기준</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#w-hourly":"10320","#w-hours":"20"}'>최저시급·20시간</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#w-hours":"15"}'>주 15시간</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#w-hours":"40"}'>주 40시간</button>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>근로 조건</span><span>시급·주 시간</span></p>
+            <div class="field">
+              <label for="w-hourly">시급</label>
+              <div class="input-wrap">
+                <input id="w-hourly" type="text" inputmode="numeric" value="10,320" autocomplete="off" data-carry="wage">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">2026년 최저임금은 10,320원입니다. 이보다 낮으면 최저임금 위반입니다.</p>
+            </div>
+            <div class="field">
+              <label for="w-hours">주 소정근로시간</label>
+              <div class="input-wrap">
+                <input id="w-hours" type="text" inputmode="decimal" value="20" autocomplete="off" data-carry="hours">
+                <span class="unit">시간</span>
+              </div>
+              <p class="help">주 15시간 이상이면 주휴수당이 발생합니다. 40시간을 넘는 시간은 주휴 산정에서 빠집니다.</p>
+            </div>
+            <div class="field">
+              <label for="w-dependents">부양가족 수 <span class="unit-hint">본인 포함</span></label>
+              <select id="w-dependents">
+                <option value="1" selected>1명 (본인)</option>
+                <option value="2">2명</option>
+                <option value="3">3명</option>
+                <option value="4">4명 이상</option>
+              </select>
+              <p class="help">소득세 간이 추정에만 쓰입니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 월 실수령</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            최저임금 고시 제2025-47호<br>4대보험 2026년 요율
+          </div>
+        </div>
+        <div class="dashed"></div>
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">월 실수령액 (4대보험)</span><span id="total-tag">주 20시간</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+        <div class="block-cap"><span>공제 방식 비교</span><b>월 기준</b></div>
+        <div style="padding:0 26px 16px">
+          <div class="compare2">
+            <div class="col" id="cmp-4">
+              <div class="k" id="cmp-4-k">4대보험 (근로자 9.72%)</div>
+              <div class="v" id="cmp-4-v">0원</div>
+              <div class="d" id="cmp-4-d"></div>
+            </div>
+            <div class="col" id="cmp-33">
+              <div class="k" id="cmp-33-k">3.3% 원천징수</div>
+              <div class="v" id="cmp-33-v">0원</div>
+              <div class="d" id="cmp-33-d"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="verdict" id="verdict"><span class="mark">참고</span><span id="verdict-text"></span></div>
+        <div class="report-note">4대보험은 연금·건강보험 가입 효과가 있고, 3.3%는 사업소득으로 5월에 정산합니다. 당장 통장에 들어오는 금액만으로 유불리를 정하지 마세요.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="severance-tax.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">퇴직금 · 퇴직소득세 실수령</span>
+            <span class="related-desc">1년 이상 일했을 때의 퇴직금을 계산합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="reduced-work-pay.html">
+            <span class="related-k">출산·육아</span>
+            <span class="related-name">육아기 근로시간 단축 급여</span>
+            <span class="related-desc">근로시간을 줄였을 때의 급여를 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="freelancer-tax.html">
+            <span class="related-k">연말정산·세금</span>
+            <span class="related-name">프리랜서 3.3% 정산</span>
+            <span class="related-desc">3.3% 공제 방식의 5월 정산을 확인합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>단계별 계산</h3>
+          <p>주급을 먼저 구하고 4.345주를 곱해 월급으로 환산합니다. 4대보험은 항목별 요율과 국민연금 상·하한을 적용합니다.</p>
+          <div class="formula-box">
+            <span class="cap">주휴수당</span>
+            시급 × 8시간 × (주 소정근로시간 ÷ 40) &nbsp;— 주 15시간 이상·개근 시
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">주휴수당 예시</div>
+        <div class="detail-body">
+          <h3>주 15·20·25·30·40시간</h3>
+          <p>2026년 최저시급 10,320원 기준입니다. 주 15시간 미만이면 주휴수당이 없습니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>주휴수당 = 10,320 × 8 × (주 시간 ÷ 40)</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="num">주 소정근로</th>
+                  <th scope="col" class="num">주 기본급</th>
+                  <th scope="col" class="num">주휴수당</th>
+                  <th scope="col" class="num">주급 합계</th>
+                  <th scope="col" class="num">월 환산</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="num">15시간</td><td class="num">154,800</td><td class="num">30,960</td><td class="num">185,760</td><td class="num">807,127</td></tr>
+                <tr><td class="num">20시간</td><td class="num">206,400</td><td class="num">41,280</td><td class="num">247,680</td><td class="num">1,076,170</td></tr>
+                <tr><td class="num">25시간</td><td class="num">258,000</td><td class="num">51,600</td><td class="num">309,600</td><td class="num">1,345,212</td></tr>
+                <tr><td class="num">30시간</td><td class="num">309,600</td><td class="num">61,920</td><td class="num">371,520</td><td class="num">1,614,254</td></tr>
+                <tr class="is-key"><td class="num">40시간</td><td class="num">412,800</td><td class="num">82,560</td><td class="num">495,360</td><td class="num">2,156,880</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="5">월 환산은 4.345주 기준. 40시간은 최저임금 월 환산액 2,156,880원(209시간)과 같습니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">공제 요율</div>
+        <div class="detail-body">
+          <h3>2026년 4대보험 근로자 부담</h3>
+          <p>국민연금은 2026년부터 총 9.5%로 올라 근로자 부담이 4.75%입니다. 건강보험 7.19%, 장기요양 0.9448%, 고용보험 실업급여 1.8%를 절반씩 나눕니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr><th scope="col">보험</th><th scope="col" class="num">전체</th><th scope="col" class="num">근로자</th><th scope="col">기준</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>국민연금</td><td class="num">9.5%</td><td class="num">4.75%</td><td>기준소득월액 41만~659만원</td></tr>
+                <tr><td>건강보험</td><td class="num">7.19%</td><td class="num">3.595%</td><td>보수월액</td></tr>
+                <tr><td>장기요양</td><td class="num">0.9448%</td><td class="num">건보료의 13.14%</td><td>건강보험료에 비례</td></tr>
+                <tr><td>고용보험 (실업급여)</td><td class="num">1.8%</td><td class="num">0.9%</td><td>보수월액</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4">산재보험·고용안정 분은 사업주 부담이라 근로자 공제에 없습니다. 근로자 합계는 약 9.72%입니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <ul class="sources">
+            <li><span class="src-name">근로기준법 §55 (주휴일)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">2026년 적용 최저임금 고시</span><a href="https://www.minimumwage.go.kr/" target="_blank" rel="noopener">최저임금위원회</a></li>
+            <li><span class="src-name">국민연금법 부칙 §4 · 건강보험법 시행령 §44</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">2026년 보험료율 안내</span><a href="https://www.nhis.or.kr/" target="_blank" rel="noopener">국민건강보험공단</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>주휴수당은 어떤 조건에서 나오나요?</summary>
+              <p class="a"><strong>주 15시간 이상</strong> 근무하고 그 주의 소정근로일을 개근하면 발생합니다. 주 15시간 미만이면 근로기준법상 주휴수당이 없습니다. 4주 평균으로 판단하므로, 한 주만 15시간을 넘긴 경우는 확인이 필요합니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>주 15시간 미만이면 주휴수당을 못 받나요?</summary>
+              <p class="a">근로기준법상 주휴수당은 발생하지 않습니다. 다만 회사 취업규칙이나 근로계약에서 별도로 정했다면 받을 수 있습니다. 초단시간 근로자는 4대보험 가입 기준도 다르므로 함께 확인하세요.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>4대보험과 3.3% 중 어느 쪽이 유리한가요?</summary>
+              <p class="a">당장 받는 금액은 <strong>3.3%가 더 많습니다</strong>(9.72% 대 3.3%). 하지만 3.3%는 사업소득 원천징수라 국민연금·건강보험 가입이 아니고, 5월에 종합소득세로 정산해야 합니다. 근로자 신분이면 4대보험이 원칙입니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>최저임금보다 적게 받으면 어떻게 하나요?</summary>
+              <p class="a">최저임금에 못 미치는 임금은 <strong>무효</strong>이고, 최저임금액을 받기로 한 것으로 봅니다. 차액을 청구할 수 있으며, 사업주는 3년 이하 징역 또는 2천만원 이하 벌금 대상입니다. 임금체불은 고용노동부 진정으로 접수할 수 있습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>월급을 209시간으로 계산하는 이유는?</summary>
+              <p class="a">주 40시간 근무에 유급주휴 8시간을 더한 48시간에, 한 달 평균 주 수 4.345를 곱하면 208.56시간이 됩니다. 이를 반올림해 <strong>209시간</strong>을 월 환산 기준시간으로 씁니다. 이 계산기는 알바처럼 주 시간이 짧은 경우 4.345주를 직접 곱합니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 2026년 최저임금 고시와 4대보험 요율로 산출한 참고값입니다. 실제 급여·공제액은 근로계약, 비과세 수당, 회사 정산 방식에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">월 실수령 (4대보험)</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="parental-leave.html">육아휴직 급여</a>
+        <a href="freelancer-tax.html">프리랜서 3.3% 정산</a>
+        <a href="rent-deduction.html">월세 세액공제 비교</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.work24.go.kr/" rel="noopener" target="_blank">고용24</a>
+        <a href="https://www.minimumwage.go.kr/" rel="noopener" target="_blank">최저임금위원회</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/weekly-holiday-pay.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>맞벌이 부양가족 인적공제 몰아주기 비교 계산기 | 셈판</title>
+<meta name="description" content="부부 각자 총급여와 자녀·부모님 수를 넣으면 A 몰아주기, B 몰아주기, 최적 분산의 과세표준과 산출세액(지방소득세 포함)을 비교합니다.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/dependent-deduction.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="부양가족 공제, 누구에게 몰아줄까">
+<meta property="og:description" content="부부 각자 총급여와 자녀·부모님 수를 넣으면 A 몰아주기, B 몰아주기, 최적 분산의 과세표준과 산출세액(지방소득세 포함)을 비교합니다.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/dependent-deduction.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "맞벌이 부부 인적공제 몰아주기 비교기",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "url": "https://pogo-obaksa.github.io/sempan/dependent-deduction.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "description": "부부 각자 총급여와 자녀·부모님 수를 넣으면 A 몰아주기, B 몰아주기, 최적 분산의 과세표준과 산출세액(지방소득세 포함)을 비교합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "부양가족 공제를 몰아주면 얼마나 유리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "부부의 한계세율 차이만큼입니다. 예를 들어 24% 구간과 15% 구간이라면 1인당 150만원 공제가 24% 쪽에서 36만원, 15% 쪽에서 22만5천원의 절세 효과를 냅니다. 여기에 지방소득세 10%가 더 붙습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "부모님을 부양가족으로 넣으려면 어떤 조건이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "만 60세 이상이면서 연간 소득금액 100만원 이하여야 하고, 같은 주민등록표에 있어야 합니다. 다른 형제자매가 이미 부모님 기본공제를 받고 있다면 중복으로 받을 수 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "경로우대 추가공제는 자동으로 붙나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 기본공제 대상 부모님이 만 70세 이상일 때 1인당 100만원이 추가로 붙습니다. 60세 이상 70세 미만은 기본공제 150만원만 적용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "자녀 공제를 부부가 나눠 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "한 자녀를 양쪽에서 동시에 공제받을 수는 없습니다. 부부 중 한 명만 그 자녀의 기본공제를 받을 수 있고, 어느 쪽에 넣을지는 유리한 쪽으로 정하면 됩니다. 자녀세액공제도 마찬가지입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "소득공제와 세액공제는 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "소득공제는 과세표준을 줄여 세율을 곱하기 전 금액을 낮춥니다. 세액공제는 계산된 세금에서 직접 빼 줍니다. 인적공제는 소득공제라서 한계세율이 높을수록 효과가 커집니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link is-current" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-tax">연말정산·세금</a><span class="sep">/</span>
+      <span>맞벌이 부양가족 몰아주기</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>맞벌이 부양가족 몰아주기</h1>
+      <p class="lede">같은 부양가족이라도 소득이 높은 쪽에 공제를 몰아주면 세율이 높은 구간에서 더 많이 깎입니다. 부부 각자 총급여와 자녀·부모님 수를 넣고 A 몰아주기, B 몰아주기, 최적 분산을 비교합니다.</p>
+      <div class="badges">
+        <span class="badge is-law">소득세법 §50 · §51</span>
+        <span class="badge">기본공제 150만원</span>
+        <span class="badge">경로우대 100만원</span>
+        <span class="badge">지방소득세 포함</span>
+      </div>
+    </div>
+
+    <div class="studio">
+
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">2026년 귀속</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#d-salary-a":"80000000","#d-salary-b":"35000000","#d-parents":"2","#d-seniors":"1"}' data-preset-click='.mini-tabs button[data-kids="2"]'>A 8천·B 3.5천</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#d-salary-a":"100000000","#d-salary-b":"40000000","#d-parents":"2","#d-seniors":"2"}' data-preset-click='.mini-tabs button[data-kids="3"]'>A 1억·B 4천</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#d-salary-a":"50000000","#d-salary-b":"50000000","#d-parents":"0","#d-seniors":"0"}' data-preset-click='.mini-tabs button[data-kids="1"]'>5천·5천 맞벌이</button>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>부부 소득</span><span>총급여</span></p>
+            <div class="field-row">
+              <div class="field">
+                <label for="d-salary-a">A 총급여</label>
+                <div class="input-wrap">
+                  <input id="d-salary-a" type="text" inputmode="numeric" value="80,000,000" autocomplete="off" data-carry="salary">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="d-salary-b">B 총급여</label>
+                <div class="input-wrap">
+                  <input id="d-salary-b" type="text" inputmode="numeric" value="35,000,000" autocomplete="off" data-carry="salary2">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+            </div>
+            <p class="help">원천징수영수증의 총급여액입니다. 근로소득공제·국민연금은 자동 반영합니다.</p>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>부양가족</span><span>기본공제 대상</span></p>
+            <div class="field">
+              <label id="d-kids-label">자녀 수 <span class="unit-hint">20세 이하·소득 100만원 이하</span></label>
+              <div class="mini-tabs is-4" role="group" aria-labelledby="d-kids-label">
+                <button type="button" data-kids="0" aria-selected="false">0명</button>
+                <button type="button" data-kids="1" aria-selected="false">1명</button>
+                <button type="button" data-kids="2" aria-selected="true">2명</button>
+                <button type="button" data-kids="3" aria-selected="false">3명+</button>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="d-parents">부모님 <span class="unit-hint">만 60세 이상</span></label>
+                <select id="d-parents">
+                  <option value="0">0명</option>
+                  <option value="1">1명</option>
+                  <option value="2" selected>2명</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="d-seniors">경로우대 <span class="unit-hint">만 70세 이상</span></label>
+                <select id="d-seniors">
+                  <option value="0">0명</option>
+                  <option value="1" selected>1명</option>
+                  <option value="2">2명</option>
+                </select>
+              </div>
+            </div>
+            <p class="help">부모님은 소득금액 100만원 이하이어야 하고, 다른 거주자가 기본공제를 받고 있으면 중복으로 받을 수 없습니다.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 최적 배분</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            소득세법 §50 · §51<br>지방소득세 10% 포함
+          </div>
+        </div>
+        <div class="dashed"></div>
+        <div class="rows" id="report-rows"></div>
+
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">최적 배분 합산 세부담</span><span id="total-tag">A + B</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+
+        <div class="block-cap"><span>배분안 비교</span><b>지방소득세 포함</b></div>
+        <div style="padding:0 26px 16px">
+          <div class="compare3">
+            <div class="col" id="cmp-a">
+              <div class="k" id="cmp-a-k">A 몰아주기</div>
+              <div class="v" id="cmp-a-v">0원</div>
+              <div class="d" id="cmp-a-d"></div>
+            </div>
+            <div class="col" id="cmp-b">
+              <div class="k" id="cmp-b-k">B 몰아주기</div>
+              <div class="v" id="cmp-b-v">0원</div>
+              <div class="d" id="cmp-b-d"></div>
+            </div>
+            <div class="col is-win" id="cmp-o">
+              <div class="k" id="cmp-o-k">최적 분산</div>
+              <div class="v" id="cmp-o-v">0원</div>
+              <div class="d" id="cmp-o-d"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="verdict" id="verdict"><span class="mark">확인</span><span id="verdict-text"></span></div>
+        <div class="report-note">근로소득세액공제·표준세액공제·보험료 공제의 세부 효과는 단순화했습니다. 실제 환급액은 원천징수영수증의 소득·세액공제 항목으로 확인하세요.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="card-ratio.html">
+            <span class="related-k">연말정산·세금</span>
+            <span class="related-name">신용·체크카드 황금비율</span>
+            <span class="related-desc">남은 소득공제 한도를 카드로 채울 수 있는지 봅니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="rent-deduction.html">
+            <span class="related-k">연말정산·세금</span>
+            <span class="related-name">월세 세액공제 vs 현금영수증</span>
+            <span class="related-desc">주거비 공제를 어느 쪽으로 받을지 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="freelancer-tax.html">
+            <span class="related-k">연말정산·세금</span>
+            <span class="related-name">프리랜서 3.3% 정산</span>
+            <span class="related-desc">부부 중 한 명이 사업소득일 때를 함께 봅니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>단계별 계산</h3>
+          <p>인적공제는 과세표준을 줄이는 금액이라, 한계세율이 높은 사람에게 붙일수록 절세액이 커집니다. 가능한 모든 배분을 계산해 합산 세부담이 가장 작은 안을 찾습니다.</p>
+          <div class="formula-box">
+            <span class="cap">절세 원리</span>
+            인적공제 1인 150만원 × 그 사람의 한계세율 = 절세액<br>
+            같은 공제라도 24% 구간에 넣으면 15% 구간보다 1.6배 효과가 큽니다.
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">배분안 상세</div>
+        <div class="detail-body">
+          <h3>세 안의 과세표준과 세부담</h3>
+          <p>최적 분산은 자녀·부모님·경로우대 공제를 A와 B에 나눠 넣는 모든 조합 가운데 합산 세부담이 가장 작은 경우입니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>지방소득세 포함 · 2026년 귀속</caption>
+              <thead>
+                <tr>
+                  <th scope="col">배분안</th>
+                  <th scope="col" class="num">A 과세표준</th>
+                  <th scope="col" class="num">B 과세표준</th>
+                  <th scope="col" class="num">합산 세부담</th>
+                  <th scope="col" class="num">최적 대비</th>
+                </tr>
+              </thead>
+              <tbody id="opt-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">공제 항목</div>
+        <div class="detail-body">
+          <h3>인적공제의 종류</h3>
+          <p>기본공제는 부양가족 1인당 150만원이고, 여기에 조건을 갖추면 추가공제가 붙습니다. 한 사람을 두 사람이 나눠 받을 수는 없습니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr><th scope="col">구분</th><th scope="col" class="num">금액</th><th scope="col">요건</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>기본공제</td><td class="num">1인 150만원</td><td>본인·배우자·직계존비속 등, 소득금액 100만원 이하</td></tr>
+                <tr><td>경로우대</td><td class="num">1인 100만원</td><td>만 70세 이상</td></tr>
+                <tr><td>장애인</td><td class="num">1인 200만원</td><td>장애인 등록</td></tr>
+                <tr><td>부녀자</td><td class="num">50만원</td><td>종합소득금액 3,000만원 이하 여성 세대주 또는 배우자 있음</td></tr>
+                <tr><td>한부모</td><td class="num">100만원</td><td>배우자 없이 자녀를 부양</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3">부녀자·한부모 공제는 기본공제와 별도로 적용됩니다. 이 계산기는 기본공제와 경로우대만 반영합니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <ul class="sources">
+            <li><span class="src-name">소득세법 §50 (기본공제)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">소득세법 §51 (추가공제 · 경로우대)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">소득세법 §55 (세율)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">연말정산 인적공제 안내</span><a href="https://www.nts.go.kr/" target="_blank" rel="noopener">국세청</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>부양가족 공제를 몰아주면 얼마나 유리한가요?</summary>
+              <p class="a">부부의 한계세율 차이만큼입니다. 예를 들어 24% 구간과 15% 구간이라면 1인당 150만원 공제가 <strong>24% 쪽에서 36만원, 15% 쪽에서 22만5천원</strong>의 절세 효과를 냅니다. 여기에 지방소득세 10%가 더 붙습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>부모님을 부양가족으로 넣으려면 어떤 조건이 있나요?</summary>
+              <p class="a">만 60세 이상이면서 <strong>연간 소득금액 100만원 이하</strong>여야 하고, 같은 주민등록표에 있어야 합니다. 다른 형제자매가 이미 부모님 기본공제를 받고 있다면 중복으로 받을 수 없습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>경로우대 추가공제는 자동으로 붙나요?</summary>
+              <p class="a">아닙니다. 기본공제 대상 부모님이 <strong>만 70세 이상</strong>일 때 1인당 100만원이 추가로 붙습니다. 60세 이상 70세 미만은 기본공제 150만원만 적용됩니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>자녀 공제를 부부가 나눠 받을 수 있나요?</summary>
+              <p class="a">한 자녀를 <strong>양쪽에서 동시에 공제받을 수는 없습니다</strong>. 부부 중 한 명만 그 자녀의 기본공제를 받을 수 있고, 어느 쪽에 넣을지는 유리한 쪽으로 정하면 됩니다. 자녀세액공제도 마찬가지입니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>소득공제와 세액공제는 어떻게 다른가요?</summary>
+              <p class="a">소득공제는 <strong>과세표준을 줄여</strong> 세율을 곱하기 전 금액을 낮춥니다. 세액공제는 계산된 세금에서 직접 빼 줍니다. 인적공제는 소득공제라서 한계세율이 높을수록 효과가 커집니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 2026년 귀속 소득세법과 입력한 총급여로 산출한 참고값입니다. 실제 결정세액은 근로소득세액공제, 표준세액공제, 연금계좌·보험료 공제, 중도 입·퇴사에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">최적 배분 세부담</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="rent-deduction.html">월세 세액공제 비교</a>
+        <a href="card-ratio.html">카드 소득공제 황금비율</a>
+        <a href="freelancer-tax.html">프리랜서 3.3% 정산</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.nts.go.kr/" rel="noopener" target="_blank">국세청</a>
+        <a href="https://hometax.go.kr/" rel="noopener" target="_blank">홈택스</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/calc-kit.js"></script>
+<script src="assets/dependent-deduction.js"></script>
+</body>
+</html>

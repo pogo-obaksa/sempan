@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전월세 전환율 계산기 · 2026 갱신 5% 상한 | 셈판</title>
+<meta name="description" content="2026.11.26 한국은행 기준금리 3.25% 기준 법정 전월세전환율 5.25%로 전세↔반전세 월세와 계약갱신 5% 증액 상한을 계산합니다. 산출식과 법령 출처 공개.">
+<meta name="theme-color" content="#F6F5F1">
+<link rel="canonical" href="https://pogo-obaksa.github.io/sempan/jeonwolse.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셈판">
+<meta property="og:title" content="전월세 전환율 · 갱신 5% 상한 계산기">
+<meta property="og:description" content="2026.11.26 한국은행 기준금리 3.25% 기준 법정 전월세전환율 5.25%로 전세↔반전세 월세와 계약갱신 5% 증액 상한을 계산합니다. 산출식과 법령 출처 공개.">
+<meta property="og:url" content="https://pogo-obaksa.github.io/sempan/jeonwolse.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "전월세 전환율 · 5% 갱신 상한 계산기",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "ko-KR",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+  "description": "2026.11.26 기준금리 3.25%를 반영한 법정 전월세전환율 5.25%로 전세·반전세 전환 월세와 계약갱신 5% 증액 상한을 계산합니다."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "법정 전월세전환율 5.25%는 어떻게 나온 값인가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "주택임대차보호법 제7조의2와 시행령 제9조에 따라 한국은행 기준금리에 2.0%p를 더한 비율과 연 10% 중 낮은 비율을 씁니다. 2026.11.26 기준금리 3.25%이므로 3.25% + 2.0%p = 5.25%가 상한입니다." } },
+    { "@type": "Question", "name": "임대인이 법정 전환율보다 높은 월세를 요구하면 어떻게 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "법정 전환율을 초과하는 부분은 효력이 없습니다. 초과 요구를 받았다면 계약서상 산정 근거와 기준금리를 확인하고, 필요하면 주택임대차분쟁조정위원회에 조정을 신청할 수 있습니다." } },
+    { "@type": "Question", "name": "계약갱신 5% 상한은 보증금과 월세에 각각 적용되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "갱신을 요구할 때 보증금과 차임은 각각 5%를 넘지 않아야 하고, 보증금 인상분을 월세로 전환하는 경우에도 증액분을 합쳐 5%를 초과할 수 없습니다. 이 계산기는 두 기준을 함께 적용해 월세 상한을 냅니다." } },
+    { "@type": "Question", "name": "전세를 반전세로 바꾸는 것도 5% 상한이 적용되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "계약갱신청구권을 행사해 조건을 바꾸는 경우에는 5% 상한이 적용됩니다. 기간 만료 후 새 계약을 맺는 경우에는 5% 상한이 아니라 법정 전환율(5.25%)이 월세 산정의 기준이 됩니다." } },
+    { "@type": "Question", "name": "반전세를 전세로 돌릴 때 환산보증금은 어떻게 계산하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "보증금에 월세 × 12 ÷ 전환율을 더합니다. 법정 전환율 5.25%라면 월세 50만원은 1억 1,428만원으로 환산됩니다. 흔히 쓰는 '월세 × 100'은 상가건물임대차 관행으로, 주거용은 전환율 환산이 기준입니다." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">셈판</span>
+        <span class="brand-sub">세무·주거 계산노트</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="주요 메뉴">
+      <a class="nav-link" href="index.html">계산기 전체</a>
+      <a class="nav-link is-current" href="index.html#f-realty">부동산·임대차</a>
+      <a class="nav-link" href="index.html#f-tax">연말정산·세금</a>
+      <a class="nav-link" href="index.html#f-care">출산·육아</a>
+      <a class="nav-link" href="index.html#f-work">근로·생활금융</a>
+      <span class="asof"><span class="dot"></span><span data-asof>2026.11.26</span> 기준</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="위치">
+      <a href="index.html">계산기</a><span class="sep">/</span>
+      <a href="index.html#f-realty">부동산·임대차</a><span class="sep">/</span>
+      <span>전월세 전환율 · 5% 상한</span>
+    </nav>
+
+    <div class="page-head">
+      <h1>전월세 전환율 · 5% 갱신 상한</h1>
+      <p class="lede">전세를 반전세로 돌리거나 갱신 계약에서 월세를 올릴 때, 임대인이 요구할 수 있는 상한을 먼저 확인합니다. 법정 전환율과 시장 전환율, 금융기관 심사 기준을 나란히 놓고 봅니다.</p>
+      <div class="badges">
+        <span class="badge is-law">주택임대차보호법 §7의2</span>
+        <span class="badge is-law">시행령 §9조</span>
+        <span class="badge">기준금리 3.25% · 2026.11.26</span>
+        <span class="badge">법정 전환율 5.25%</span>
+      </div>
+    </div>
+
+    <div class="studio">
+
+      <!-- 입력 -->
+      <section class="panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">계산 조건</h2>
+          <span class="hint">금액 단위: 원</span>
+        </div>
+        <div class="panel-body">
+          <div class="presets" role="group" aria-label="예시로 바로 계산해 보기">
+            <span class="presets-label">예시</span>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#a-jeonse":"300000000","#a-deposit":"62000000","#market-rate":"6.5"}' data-preset-tab="#tab-toMonthly">3억 → 6,200만</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#b-deposit":"100000000","#b-monthly":"800000"}' data-preset-tab="#tab-toJeonse">5억 · 월세 80만</button>
+            <button class="chip" type="button" aria-pressed="false" data-preset='{"#c-deposit":"300000000","#c-monthly":"500000","#c-newdeposit":"300000000"}' data-preset-tab="#tab-renew">갱신 5% 상한</button>
+          </div>
+
+          <div class="segmented" role="tablist" aria-label="계산 방식">
+            <button role="tab" id="tab-toMonthly" data-mode="toMonthly" aria-selected="true" aria-controls="pane-toMonthly">전세 → 반전세</button>
+            <button role="tab" id="tab-toJeonse" data-mode="toJeonse" aria-selected="false" aria-controls="pane-toJeonse">반전세 → 전세</button>
+            <button role="tab" id="tab-renew" data-mode="renew" aria-selected="false" aria-controls="pane-renew">갱신 5% 상한</button>
+          </div>
+
+          <div class="field-group" id="pane-toMonthly" role="tabpanel" aria-labelledby="tab-toMonthly">
+            <div class="field">
+              <label for="a-jeonse">전세보증금 <span class="unit-hint">보증금 전액</span></label>
+              <div class="input-wrap">
+                <input id="a-jeonse" type="text" inputmode="numeric" value="300,000,000" autocomplete="off" data-carry="jeonse">
+                <span class="unit">원</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="a-deposit">반전세 보증금 <span class="unit-hint">전환 후 보증금</span></label>
+              <div class="input-wrap">
+                <input id="a-deposit" type="text" inputmode="numeric" value="62,000,000" autocomplete="off" data-carry="deposit">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">월세 = (전세보증금 − 반전세보증금) × 법정 전환율 ÷ 12</p>
+            </div>
+          </div>
+
+          <div class="field-group" id="pane-toJeonse" role="tabpanel" aria-labelledby="tab-toJeonse" hidden>
+            <div class="field">
+              <label for="b-deposit">반전세 보증금 <span class="unit-hint">현재 보증금</span></label>
+              <div class="input-wrap">
+                <input id="b-deposit" type="text" inputmode="numeric" value="100,000,000" autocomplete="off">
+                <span class="unit">원</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="b-monthly">월세 <span class="unit-hint">월 납부액</span></label>
+              <div class="input-wrap">
+                <input id="b-monthly" type="text" inputmode="numeric" value="500,000" autocomplete="off" data-carry="monthly">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">환산 전세보증금 = 보증금 + 월세 × 12 ÷ 전환율</p>
+            </div>
+          </div>
+
+          <div class="field-group" id="pane-renew" role="tabpanel" aria-labelledby="tab-renew" hidden>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-deposit">현재 보증금</label>
+                <div class="input-wrap">
+                  <input id="c-deposit" type="text" inputmode="numeric" value="200,000,000" autocomplete="off">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="c-monthly">현재 월세</label>
+                <div class="input-wrap">
+                  <input id="c-monthly" type="text" inputmode="numeric" value="400,000" autocomplete="off">
+                  <span class="unit">원</span>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-newdeposit">갱신 후 보증금 <span class="unit-hint">변경 없으면 그대로</span></label>
+              <div class="input-wrap">
+                <input id="c-newdeposit" type="text" inputmode="numeric" value="200,000,000" autocomplete="off">
+                <span class="unit">원</span>
+              </div>
+              <p class="help">보증금·월세 각각 5% 이내. 보증금 인상분을 월세로 돌려도 합산 5%를 넘을 수 없습니다.</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <p class="group-label"><span>비교 기준</span><span>선택 입력</span></p>
+            <div class="field">
+              <label for="market-rate">시장 전환율 <span class="unit-hint">기본 6.5%</span></label>
+              <div class="input-wrap">
+                <input id="market-rate" type="text" inputmode="decimal" value="6.5" autocomplete="off" data-carry="rate">
+                <span class="unit">%</span>
+              </div>
+              <p class="help">은행권 전세자금대출 심사 참고치를 기본값으로 두었습니다. 실제 시세는 지역·시점에 따라 다릅니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 결과 -->
+      <article class="report" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <p class="report-kicker">STATEMENT</p>
+            <h2 class="report-title" id="report-title">산출 명세서 · 전세 → 반전세</h2>
+          </div>
+          <div class="report-meta">
+            <b>2026.11.26 기준</b>
+            주택임대차보호법 §7의2<br>시행령 §9조
+          </div>
+        </div>
+        <div class="dashed"></div>
+        <div class="rows" id="report-rows"></div>
+        <div class="total">
+          <div class="total-cap"><span id="total-cap">법정 상한 월세</span><span id="total-tag">연 5.25% 기준</span></div>
+          <p class="total-amount" id="total-amount">0<span class="won">원</span></p>
+          <p class="total-sub" id="total-sub"></p>
+        </div>
+        <div class="verdict" id="verdict"><span class="mark">확인</span><span id="verdict-text"></span></div>
+        <div class="report-note" id="report-note">전환율은 임대인이 임의로 정할 수 없습니다. 5.25%는 2026.11.26 기준금리 공표에 따른 상한입니다.</div>
+        <div class="report-actions">
+          <button class="btn btn-primary" type="button" data-copy="copy-src">결과 복사</button>
+          <button class="btn" type="button" id="btn-print">인쇄</button>
+        </div>
+        <pre id="copy-src" class="sr-only"></pre>
+      </article>
+
+    </div>
+
+    <!-- 산출 근거 -->
+    <section class="related" aria-labelledby="related-h">
+      <div class="related-head">
+        <h2 class="related-title" id="related-h">함께 많이 계산하는 도구</h2>
+        <a class="related-sub" href="index.html">전체 15종 →</a>
+      </div>
+      <div class="related-grid">
+          <a class="related-card" href="jeonse-vs-wolse.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">전세 vs 반전세 손익 비교</span>
+            <span class="related-desc">전환한 월세가 실제로 유리한지 주거비로 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="move-in-budget.html">
+            <span class="related-k">부동산·임대차</span>
+            <span class="related-name">이사 · 입주 필요 현금</span>
+            <span class="related-desc">보증금을 바꿀 때 필요한 현금을 함께 봅니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+          <a class="related-card" href="loan-repayment.html">
+            <span class="related-k">근로·생활금융</span>
+            <span class="related-name">대출 상환방식 총이자</span>
+            <span class="related-desc">전세자금대출의 총이자를 방식별로 비교합니다.</span>
+            <span class="related-go">계산하기 →</span>
+          </a>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="d1">
+      <div class="detail-block">
+        <div class="detail-label" id="d1">산출 근거</div>
+        <div class="detail-body">
+          <h3>단계별 계산</h3>
+          <p>아래 식에는 지금 입력한 값이 그대로 들어갑니다. 숫자를 바꾸면 각 단계와 최종 금액이 함께 갱신됩니다.</p>
+          <div class="formula-box">
+            <span class="cap">법정 전환율</span>
+            min(한국은행 기준금리 + 2.0%p, 10%) = min(3.25% + 2.0%p, 10%) = <strong>5.25%</strong>
+          </div>
+          <details class="fold" open>
+            <summary><span>적용 계산식 5단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
+            <ol class="steps" id="steps"></ol>
+          </details>
+        </div>
+      </div>
+
+      <!-- 비교표 -->
+      <div class="detail-block">
+        <div class="detail-label">전환율 비교</div>
+        <div class="detail-body">
+          <h3>법정 상한 · 시장 · 금융기관 심사 기준</h3>
+          <p>같은 보증금이라도 어떤 전환율을 쓰느냐에 따라 월세가 달라집니다. 아래는 보증금 1억원을 월세로 바꿀 때의 환산값입니다.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <caption>2026.11.26 기준 · 보증금 1억원 환산</caption>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col" class="num">전환율</th>
+                  <th scope="col" class="num">월세 상당</th>
+                  <th scope="col" class="num">연 이자 상당</th>
+                  <th scope="col">근거</th>
+                </tr>
+              </thead>
+              <tbody id="compare-body"></tbody>
+            </table>
+          </div>
+          <p class="help" style="margin-top:12px" id="compare-note">금융기관 심사 기준은 상품·기관 고시에 따라 달라지며, 대출 심사에는 시세·담보·보증 조건이 함께 반영됩니다.</p>
+        </div>
+      </div>
+
+      <!-- 법령·출처 -->
+      <div class="detail-block">
+        <div class="detail-label">법령 · 출처</div>
+        <div class="detail-body">
+          <h3>근거 조문과 확인 지점</h3>
+          <p>법정 전환율은 <strong>주택임대차보호법 제7조의2</strong>가 정한 산식과 <strong>같은 법 시행령 제9조</strong>의 가산 이율로 결정됩니다. 계약갱신 청구 시 증액 한도는 <strong>같은 법 제7조 제2항</strong>이 5%로 제한하고, 보증금과 차임을 서로 전환하는 경우의 계산은 제7조의2를 따릅니다.</p>
+          <ul class="sources">
+            <li><span class="src-name">주택임대차보호법 제7조의2 · 시행령 제9조 (전월세전환율)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">주택임대차보호법 제7조 제2항 (계약갱신 5% 상한)</span><a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            <li><span class="src-name">한국은행 기준금리 3.25% (2026.11.26 공표)</span><a href="https://www.bok.or.kr/portal/singl/baseRate/list.do?menuNo=200643" target="_blank" rel="noopener">한국은행</a></li>
+            <li><span class="src-name">전세자금대출 보증 심사 기준 (HF·HUG)</span><a href="https://www.hf.go.kr/" target="_blank" rel="noopener">HF</a></li>
+          </ul>
+          <p style="margin-top:16px">적용 대상은 <strong>주거용 건물의 전부 또는 일부</strong>를 임차하는 경우입니다. 상가·오피스 등 상가건물임대차에는 상가건물임대차보호법의 환산보증금 기준이 따로 적용되므로 이 계산기의 결과를 쓸 수 없습니다.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="detail-block">
+        <div class="detail-label">자주 묻는 질문</div>
+        <div class="detail-body">
+          <h3>계산 전에 확인하는 5가지</h3>
+          <div class="faq">
+            <details open>
+              <summary><span class="q">Q1</span>법정 전환율 5.25%는 어떻게 나온 값인가요?</summary>
+              <p class="a">주택임대차보호법 제7조의2와 시행령 제9조에 따라 <strong>한국은행 기준금리에 2.0%p를 더한 비율</strong>과 <strong>연 10%</strong> 중 낮은 비율을 씁니다. 2026.11.26 기준금리 3.25%이므로 3.25% + 2.0%p = 5.25%가 상한입니다. 기준금리가 바뀌면 이 값도 자동으로 따라 바뀝니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q2</span>임대인이 법정 전환율보다 높은 월세를 요구하면 어떻게 되나요?</summary>
+              <p class="a">법정 전환율을 초과하는 부분은 효력이 없습니다. 계약서에 적힌 산정 근거와 적용 기준금리를 확인하고, 초과 요구를 받았다면 계약 전에 조정을 요구하는 것이 좋습니다. 협의가 되지 않으면 <strong>주택임대차분쟁조정위원회</strong>에 조정을 신청할 수 있습니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q3</span>계약갱신 5% 상한은 보증금과 월세에 각각 적용되나요?</summary>
+              <p class="a">갱신을 요구할 때 <strong>보증금과 차임은 각각 5%를 넘지 않아야</strong> 하고, 보증금 인상분을 월세로 전환하는 경우에도 증액분을 합쳐 5%를 초과할 수 없습니다. 이 계산기는 두 기준을 함께 적용해 월세 상한을 냅니다.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q4</span>전세를 반전세로 바꾸는 것도 5% 상한이 적용되나요?</summary>
+              <p class="a"><strong>계약갱신청구권을 행사해 조건을 바꾸는 경우</strong>에는 5% 상한이 적용됩니다. 반면 기간 만료 후 새 계약을 맺는 경우에는 5% 상한이 아니라 <strong>법정 전환율(5.25%)</strong>이 월세 산정의 기준이 됩니다. 어느 쪽인지에 따라 결과가 크게 달라지므로 계약 형태를 먼저 확인하세요.</p>
+            </details>
+            <details>
+              <summary><span class="q">Q5</span>반전세를 전세로 돌릴 때 환산보증금은 어떻게 계산하나요?</summary>
+              <p class="a">보증금에 <strong>월세 × 12 ÷ 전환율</strong>을 더합니다. 법정 전환율 5.25%라면 월세 50만원은 1억 1,428만원으로 환산됩니다. 흔히 쓰는 ‘월세 × 100’은 상가건물임대차 관행이며, 주거용 임대차에서는 전환율 환산이 기준입니다.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="border-top:1px solid var(--line); margin-top:8px">
+        <span class="disclaimer-mark">모의 계산</span>
+        <p>이 계산기는 2026.11.26 기준금리와 공개된 법령을 바탕으로 한 참고값입니다. 실제 계약의 효력은 계약서 문구, 갱신 유형, 임차 목적물의 성격에 따라 달라질 수 있으므로 계약 전 법령 원문과 전문가 상담을 함께 확인하십시오.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="mbar" id="mbar" data-target=".total" role="region" aria-label="모바일 결과 요약">
+  <div class="wrap mbar-in">
+    <div class="mbar-k">
+      <span class="mbar-label" id="mbar-label">법정 상한 월세</span>
+      <span class="mbar-v" id="mbar-v">0원</span>
+    </div>
+    <button class="mbar-go" type="button">명세서 보기 <span aria-hidden="true">↓</span></button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
+        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
+        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
+        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
+      </svg>
+          <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
+        </a>
+        <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>계산기</h4>
+        <a href="jeonwolse.html">전월세 전환율 · 5% 상한</a>
+        <a href="card-ratio.html">카드 소득공제 황금비율</a>
+        <a href="jeonse-vs-wolse.html">전세 vs 반전세</a>
+        <a href="move-in-budget.html">이사 · 입주 현금</a>
+        <a href="index.html">전체 15종 보기</a>
+      </div>
+      <div class="footer-col">
+        <h4>정책·안내</h4>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="terms.html">이용약관</a>
+        <a href="disclaimer.html">모의 계산 면책</a>
+        <a href="sitemap.xml">사이트맵</a>
+      </div>
+      <div class="footer-col">
+        <h4>기준·출처</h4>
+        <a href="https://www.law.go.kr/" rel="noopener" target="_blank">국가법령정보센터</a>
+        <a href="https://www.bok.or.kr/portal/singl/baseRate/list.do?menuNo=200643" rel="noopener" target="_blank">한국은행 기준금리</a>
+        <a href="https://www.hf.go.kr/" rel="noopener" target="_blank">HF · HUG</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="disclaimer-mark">모의 계산</span>
+      <p><strong>본 사이트의 모든 계산 결과는 참고값입니다.</strong> 이용자가 입력한 값과 공개된 법령·고시를 기준으로 산출한 모의 계산이며, 실제 세액·대출 심사·법적 효력은 개별 소득, 계약 조건, 기관 심사에 따라 달라질 수 있습니다. 신고·계약·대출 실행 전에는 반드시 국가법령정보센터의 조문과 국세청·금융기관의 최신 기준을 확인하십시오. 본 사이트는 계산 결과의 활용으로 발생한 손해에 대해 법적 책임을 지지 않습니다.</p>
+    </div>
+    <div class="copyright">© 2026 셈판 · 세무·주거 계산노트 · 기준일 2026.11.26</div>
+  </div>
+</footer>
+
+<script src="data/constants-2026.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/jeonwolse.js"></script>
+</body>
+</html>
