@@ -40,6 +40,8 @@ web/life-calc/
 ├─ assets/<slug>.js            계산기별 로직 15종
 ├─ tools/run-verify.sh         /sempan/ 서브경로로 로컬 서버 기동 → 검증 → 종료
 ├─ tools/verify.py             Playwright 전수 검증·스크린샷 (400여 개 체크)
+├─ tools/apply-ga.py           GA4 측정 ID를 19페이지 <head>에 삽입·교체
+├─ tools/check-ga.py           GA4 태그·이벤트 전용 검증 (13항목)
 ├─ tools/detail-shots.py       요소 단위 확대 캡처
 └─ preview/                    PC·모바일 스크린샷, verify-report.json
 ```
@@ -77,6 +79,14 @@ sh web/life-calc/tools/run-verify.sh
 - **내부 링크 전수**: 모든 페이지의 상대경로 `.html` 링크 HTTP 200, 루트 절대경로(`/...`) 0건.
 - 정적 파일: `example.com` 잔존 0건, `sitemap.xml` 19 URL 전부 배포 주소, `robots.txt` 경로·사이트맵 확인.
 - 콘솔 에러 0건, 요청 실패 0건. 결과는 `preview/verify-report.json`.
+
+## 방문 통계 (GA4)
+
+- 측정 ID: **`G-FY7JKTCH7W`** (속성 `셈판 - 세무·주거 계산노트`, 스트림 `https://pogo-obaksa.github.io/sempan/`)
+- 19개 HTML `<head>`의 viewport 메타 바로 뒤에 `gtag.js` 스니펫이 들어 있습니다. ID를 바꾸려면 `python3 tools/apply-ga.py G-새ID`만 다시 실행하면 19페이지가 한 번에 갱신됩니다.
+- `file://` 및 로컬 검증 서버(`localhost`·`127.0.0.1`·`::1`)에서는 `ga-disable-G-FY7JKTCH7W`로 전송을 끕니다. 검증 트래픽이 실제 통계에 섞이지 않습니다.
+- 기록 이벤트(`assets/site.js`, `gtag` 없으면 조용히 통과): `page_view`(자동) · `calc_run`(입력 변경 0.8초 디바운스, `page`·`changes`) · `preset_click`(`preset` 이름) · `related_click`(`from`·`to`) · `copy_result` · `mbar_click` · `filter_click`(홈 카테고리).
+- GA 전용 검증: `LD_LIBRARY_PATH=/workspace/scratch/sysroot/usr/lib/x86_64-linux-gnu python3 tools/check-ga.py`
 
 ## 값 갱신
 
