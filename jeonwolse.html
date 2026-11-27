@@ -281,6 +281,61 @@
             <summary><span>적용 계산식 5단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">법정 전월세전환율 5.25%는 어떤 기준으로 정해지나요?</h2>
+          <p>주택임대차보호법 제7조의2와 시행령 제9조는 <strong>한국은행 기준금리에 연 2.0%p를 더한 비율</strong>과 <strong>연 10%</strong> 중 낮은 비율을 상한으로 정합니다. 2026.11.26 기준금리 3.25%에 2.0%p를 더한 5.25%가 상한이고, 기준금리가 내려가면 이 값도 함께 내려갑니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">전세 3억을 반전세로 돌리면 보증금에 따라 월세는 얼마까지인가요?</h2>
+          <p>전환율은 전세보증금 전액이 아니라 반전세로 돌리며 돌려받는 <strong>차액에만</strong> 적용합니다. 아래는 법정 전환율 5.25%로 계산한 월세 상한입니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>전세 3억·5억 → 반전세 (법정 전환율 5.25% · 2026.11.26 기준)</caption>
+              <thead>
+              <tr>
+                <th scope="col">전세 → 반전세</th>
+                <th scope="col" class="num" data-check="#report-rows|전환대상 보증금">전환대상 보증금</th>
+                <th scope="col" class="num" data-check="#total-amount">법정 상한 월세</th>
+                <th scope="col" class="num" data-check="#report-rows|연 환산 이자">연 환산 이자</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#a-jeonse": "300000000", "#a-deposit": "100000000"}'>
+                <td>3억 → 1억</td>
+                <td class="num">200,000,000<span class="u">원</span></td>
+                <td class="num">875,000<span class="u">원</span></td>
+                <td class="num">10,500,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#a-jeonse": "300000000", "#a-deposit": "200000000"}'>
+                <td>3억 → 2억</td>
+                <td class="num">100,000,000<span class="u">원</span></td>
+                <td class="num">437,500<span class="u">원</span></td>
+                <td class="num">5,250,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#a-jeonse": "500000000", "#a-deposit": "200000000"}'>
+                <td>5억 → 2억</td>
+                <td class="num">300,000,000<span class="u">원</span></td>
+                <td class="num">1,312,500<span class="u">원</span></td>
+                <td class="num">15,750,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#a-jeonse": "500000000", "#a-deposit": "300000000"}'>
+                <td>5억 → 3억</td>
+                <td class="num">200,000,000<span class="u">원</span></td>
+                <td class="num">875,000<span class="u">원</span></td>
+                <td class="num">10,500,000<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">임대인이 이 금액을 넘겨 요구하더라도 초과분은 효력이 없습니다. 실제 시세는 시장 전환율(기본 6.5%)과 비교해 판단하세요.</p>
+          <h2 class="q">계약갱신 때는 보증금과 월세를 합쳐 5%까지만 올릴 수 있나요?</h2>
+          <p>맞습니다. 갱신을 요구할 때 보증금과 차임은 각각 5%를 넘지 않아야 하고, 보증금을 올린 뒤 남은 여지를 월세로 돌리는 경우에도 두 증액분을 합쳐 5%를 넘을 수 없습니다. 계산 조건에서 <strong>갱신 5% 상한</strong>을 고르면 보증금 증액분을 반영한 월세 상한까지 함께 계산합니다.</p>
         </div>
       </div>
 

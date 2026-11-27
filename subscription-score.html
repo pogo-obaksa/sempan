@@ -334,6 +334,66 @@
             <summary><span>적용 계산식 5단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">청약 가점 84점은 어떻게 채워지나요?</h2>
+          <p>무주택기간 <strong>32점</strong>, 부양가족 <strong>35점</strong>, 청약통장 가입기간 <strong>17점</strong>으로 나뉩니다. 무주택기간은 만 30세 또는 혼인신고일부터 1년 미만 2점에서 시작해 1년마다 2점(15년 이상 32점), 부양가족은 0명 5점에서 1명마다 5점(6명 이상 35점), 통장은 1년마다 1점(15년 이상 17점)씩 늘어납니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">무주택 7년·부양가족 2명·통장 9년이면 몇 점인가요?</h2>
+          <p>같은 사람이라도 세 항목의 조합에 따라 점수가 크게 달라집니다. 아래는 자주 나오는 네 가지 조합입니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>청약 가점 조합별 합계 (84점 만점)</caption>
+              <thead>
+              <tr>
+                <th scope="col">조건</th>
+                <th scope="col" class="num" data-check="#report-rows|무주택기간">무주택기간</th>
+                <th scope="col" class="num" data-check="#report-rows|부양가족">부양가족</th>
+                <th scope="col" class="num" data-check="#report-rows|청약통장">청약통장</th>
+                <th scope="col" class="num" data-check="#total-amount">가점 합계</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#c-homeless": "3", "#c-dependents": "1", "#c-account": "5"}'>
+                <td>신혼 3년 · 1명 · 5년</td>
+                <td class="num">8<span class="u">점</span></td>
+                <td class="num">10<span class="u">점</span></td>
+                <td class="num">7<span class="u">점</span></td>
+                <td class="num">25<span class="u">점</span></td>
+              </tr>
+              <tr data-in='{"#c-homeless": "7", "#c-dependents": "2", "#c-account": "9"}'>
+                <td>7년 · 2명 · 9년</td>
+                <td class="num">16<span class="u">점</span></td>
+                <td class="num">15<span class="u">점</span></td>
+                <td class="num">11<span class="u">점</span></td>
+                <td class="num">42<span class="u">점</span></td>
+              </tr>
+              <tr data-in='{"#c-homeless": "10", "#c-dependents": "3", "#c-account": "12"}'>
+                <td>10년 · 3명 · 12년</td>
+                <td class="num">22<span class="u">점</span></td>
+                <td class="num">20<span class="u">점</span></td>
+                <td class="num">14<span class="u">점</span></td>
+                <td class="num">56<span class="u">점</span></td>
+              </tr>
+              <tr data-in='{"#c-homeless": "15", "#c-dependents": "4", "#c-account": "15"}'>
+                <td>15년 · 4명 · 15년</td>
+                <td class="num">32<span class="u">점</span></td>
+                <td class="num">25<span class="u">점</span></td>
+                <td class="num">17<span class="u">점</span></td>
+                <td class="num">74<span class="u">점</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">배우자 통장 가입기간의 50%를 최대 3점까지 더할 수 있습니다. 특별공급 소득 기준은 가구원 수와 비율에 따라 달라집니다.</p>
+          <h2 class="q">부양가족은 몇 명까지 점수로 인정되나요?</h2>
+          <p>6명 이상이면 35점으로 만점입니다. 0명 5점에서 시작해 1명마다 5점이 붙고, 배우자·3년 이상 같은 등본에 있는 직계존속·미혼 자녀가 대상입니다.</p>
         </div>
       </div>
 

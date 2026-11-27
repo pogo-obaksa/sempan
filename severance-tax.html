@@ -309,6 +309,59 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">퇴직소득세는 왜 근로소득세보다 적게 나오나요?</h2>
+          <p>퇴직소득은 여러 해에 걸쳐 쌓인 소득이라 <strong>근속연수공제</strong>와 <strong>환산급여공제</strong>를 먼저 빼고, 1년치로 환산한 금액에 누진세율을 적용한 뒤 다시 근속연수를 곱합니다. 그래서 같은 금액의 근로소득보다 세부담이 낮게 나옵니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">월급 300만·400만·500만 원으로 3년·5년·10년 근무하면 실수령은 얼마인가요?</h2>
+          <p>월 급여만 있고 상여금은 없는 조건입니다. 근속연수와 급여가 늘수록 퇴직금도 커지지만 공제 구간이 달라 세율은 조금씩 달라집니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>근속·월급별 퇴직금과 세후 실수령액</caption>
+              <thead>
+              <tr>
+                <th scope="col">근속 · 월급</th>
+                <th scope="col" class="num" data-check="#report-rows|법정 퇴직금">법정 퇴직금</th>
+                <th scope="col" class="num" data-check="#report-rows|퇴직소득세">퇴직소득세</th>
+                <th scope="col" class="num" data-check="#report-rows|지방소득세">지방소득세</th>
+                <th scope="col" class="num" data-check="#total-amount">세후 실수령</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#s-days": "1095", "#s-wage": "3000000"}'>
+                <td>3년 · 월 300만원</td>
+                <td class="num">8,876,703<span class="u">원</span></td>
+                <td class="num">− 93,042<span class="u">원</span></td>
+                <td class="num">− 9,304<span class="u">원</span></td>
+                <td class="num">8,774,357<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#s-days": "1826", "#s-wage": "4000000"}'>
+                <td>5년 · 월 400만원</td>
+                <td class="num">19,736,815<span class="u">원</span></td>
+                <td class="num">− 273,510<span class="u">원</span></td>
+                <td class="num">− 27,351<span class="u">원</span></td>
+                <td class="num">19,435,954<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#s-days": "3652", "#s-wage": "5000000"}'>
+                <td>10년 · 월 500만원</td>
+                <td class="num">49,342,036<span class="u">원</span></td>
+                <td class="num">− 663,794<span class="u">원</span></td>
+                <td class="num">− 66,379<span class="u">원</span></td>
+                <td class="num">48,611,863<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">재직 1년 미만은 법정 퇴직금 대상이 아닙니다. 임원은 정관·주주총회 결의로 정한 한도가 따로 적용될 수 있습니다.</p>
+          <h2 class="q">근속연수공제는 어떻게 계산되나요?</h2>
+          <p>5년 이하는 1년당 100만원, 5년 초과~10년은 500만원에 1년당 200만원, 10년 초과~20년은 1,500만원에 1년당 250만원, 20년 초과는 4,000만원에 1년당 300만원을 더합니다(2023년 상향 기준).</p>
         </div>
       </div>
 

@@ -1817,3 +1817,60 @@ table.data {
   .report-table { padding: 2px 18px 16px; }
   .report-table .table-wrap { max-height: 280px; }
 }
+
+/* ---------- 질문형 소제목 · 실전 계산 예시표 (검색·AI 브리핑) ---------- */
+
+.detail-body h2.q {
+  position: relative;
+  margin: 26px 0 8px;
+  padding-left: 12px;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  scroll-margin-top: 84px;
+}
+
+.detail-body h2.q::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--green);
+  opacity: 0.8;
+}
+
+.detail-body h2.q:first-child { margin-top: 0; }
+
+.detail-body h2.q + p { margin-top: 0; }
+
+table.data.example { min-width: 0; }
+
+table.data.example thead th { white-space: normal; }
+
+table.data.example td.num { white-space: nowrap; }
+
+table.data.example .u {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--faint);
+  margin-left: 1px;
+}
+
+table.data.example td:first-child { color: var(--ink); }
+
+table.data.example tbody tr.is-note td { color: var(--faint); }
+
+@media (max-width: 560px) {
+  .detail-body h2.q { font-size: 15px; margin-top: 22px; padding-left: 10px; }
+  table.data.example { font-size: 10.5px; }
+  table.data.example thead th { font-size: 9px; padding: 6px 4px; letter-spacing: 0.02em; }
+  table.data.example td { padding: 6px 4px; line-height: 1.4; }
+  table.data.example td.num { letter-spacing: -0.03em; }
+  table.data.example .u { font-size: 9px; margin-left: 0; }
+  table.data.example td:first-child { font-size: 10px; }
+}

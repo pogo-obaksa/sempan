@@ -309,6 +309,59 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">인적공제는 왜 한쪽에 몰아줄수록 유리한가요?</h2>
+          <p>소득세는 구간별 누진세율이라 과세표준이 높은 사람의 한계세율이 더 높습니다. 같은 150만원을 공제해도 한계세율 24% 구간에서는 소득세가 36만원, 6% 구간에서는 9만원 줄어 차이가 납니다(지방소득세 별도).</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">맞벌이 부부는 부양가족 공제를 누구에게 넣어야 유리한가요?</h2>
+          <p>두 사람의 총급여 차이가 클수록 많이 버는 쪽에 몰아주는 편이 유리하고, 비슷하면 나눠 넣는 편이 낫습니다. 아래는 부모 2명을 포함해 자녀 수와 급여 조합을 바꾼 결과입니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>급여·자녀 조합별 최적 배분 (부모 2명 · 지방소득세 포함)</caption>
+              <thead>
+              <tr>
+                <th scope="col">A · B 총급여</th>
+                <th scope="col" class="num" data-check="#report-rows|A 과세표준">A 과세표준</th>
+                <th scope="col" class="num" data-check="#report-rows|B 과세표준">B 과세표준</th>
+                <th scope="col" class="num" data-check="#total-amount">최적 배분 세부담</th>
+                <th scope="col" class="num" data-check="#cmp-a-v">A 몰아주기</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#d-salary-a": "35000000", "#d-salary-b": "35000000", ".mini-tabs button[data-kids=\"1\"]": "1"}'>
+                <td>3,500만 · 3,500만 · 자녀 1</td>
+                <td class="num">21,337,500<span class="u">원</span></td>
+                <td class="num">16,837,500<span class="u">원</span></td>
+                <td class="num">3,526,876<span class="u">원</span></td>
+                <td class="num">3,526,876<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#d-salary-a": "70000000", "#d-salary-b": "35000000", ".mini-tabs button[data-kids=\"2\"]": "1"}'>
+                <td>7,000만 · 3,500만 · 자녀 2</td>
+                <td class="num">48,925,000<span class="u">원</span></td>
+                <td class="num">18,337,500<span class="u">원</span></td>
+                <td class="num">8,326,313<span class="u">원</span></td>
+                <td class="num">8,326,313<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#d-salary-a": "100000000", "#d-salary-b": "40000000", ".mini-tabs button[data-kids=\"2\"]": "1"}'>
+                <td>1억 · 4,000만 · 자녀 2</td>
+                <td class="num">73,993,700<span class="u">원</span></td>
+                <td class="num">25,350,000<span class="u">원</span></td>
+                <td class="num">15,995,087<span class="u">원</span></td>
+                <td class="num">15,995,087<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">최적 배분은 가능한 모든 조합을 계산해 합산 세부담이 가장 작은 안을 고른 값입니다. 자녀 수가 늘면 조합에 따라 차이가 커집니다.</p>
+          <h2 class="q">부모님을 부양가족으로 넣으려면 어떤 조건이 필요한가요?</h2>
+          <p>부모님은 만 60세 이상이면서 연간 소득이 100만원 이하여야 하고, 만 70세 이상이면 경로우대 추가공제 100만원이 붙습니다. 계산 조건에서 부모님 수와 경로우대 인원을 바꾸면 배분 결과가 어떻게 달라지는지 바로 볼 수 있습니다.</p>
         </div>
       </div>
 

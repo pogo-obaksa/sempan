@@ -280,6 +280,66 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">주휴수당은 주 15시간 미만이면 정말 안 나오나요?</h2>
+          <p>주 15시간 이상 근무하고 정해진 근무일을 개근해야 주휴수당이 발생합니다. 15시간 미만이면 0원이고, 40시간을 넘는 근로시간은 주휴수당 산정에서 빠집니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">시급 1만 320원으로 주 15·20·30·40시간 일하면 월 실수령은 얼마인가요?</h2>
+          <p>2026년 최저임금 10,320원 기준입니다. 주휴수당은 주 40시간을 기준으로 비례 계산하고, 한 달은 4.345주로 환산합니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>주 소정근로시간별 월급·실수령 (시급 10,320원)</caption>
+              <thead>
+              <tr>
+                <th scope="col">주 소정근로시간</th>
+                <th scope="col" class="num" data-check="#report-rows|주휴수당">주휴수당</th>
+                <th scope="col" class="num" data-check="#report-rows|월 환산 (4.345주)">세전 월급</th>
+                <th scope="col" class="num" data-check="#report-rows|4대보험 합계">4대보험 공제</th>
+                <th scope="col" class="num" data-check="#total-amount">월 실수령</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#w-hours": "15"}'>
+                <td>주 15시간</td>
+                <td class="num">30,960<span class="u">원</span></td>
+                <td class="num">807,127<span class="u">원</span></td>
+                <td class="num">− 78,432<span class="u">원</span></td>
+                <td class="num">728,695<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#w-hours": "20"}'>
+                <td>주 20시간</td>
+                <td class="num">41,280<span class="u">원</span></td>
+                <td class="num">1,076,170<span class="u">원</span></td>
+                <td class="num">− 104,576<span class="u">원</span></td>
+                <td class="num">971,594<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#w-hours": "30"}'>
+                <td>주 30시간</td>
+                <td class="num">61,920<span class="u">원</span></td>
+                <td class="num">1,614,254<span class="u">원</span></td>
+                <td class="num">− 156,863<span class="u">원</span></td>
+                <td class="num">1,447,539<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#w-hours": "40"}'>
+                <td>주 40시간</td>
+                <td class="num">82,560<span class="u">원</span></td>
+                <td class="num">2,152,339<span class="u">원</span></td>
+                <td class="num">− 209,152<span class="u">원</span></td>
+                <td class="num">1,920,510<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">4대보험은 근로자 부담 9.72%와 소득세를 반영한 값입니다. 초단시간 근로자는 가입 의무가 달라 실제 공제가 다를 수 있습니다.</p>
+          <h2 class="q">알바 3.3% 공제와 4대보험 공제는 어느 쪽이 유리한가요?</h2>
+          <p>당장 받는 금액은 3.3%가 많지만 국민연금·건강보험 가입이 아니어서 5월 종합소득세 신고로 정산해야 하고, 실업급여 같은 보호도 받기 어렵습니다. 이 계산기는 두 방식을 나란히 보여 주고 차액을 알려 줍니다.</p>
         </div>
       </div>
 

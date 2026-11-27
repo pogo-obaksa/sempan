@@ -319,6 +319,59 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">월세 세액공제와 현금영수증 소득공제는 무엇이 다른가요?</h2>
+          <p>세액공제는 산출세액에서 직접 빼는 방식이라 17%·15%가 그대로 줄어들고, 대신 표준세액공제 13만원을 포기해야 합니다. 현금영수증 소득공제는 과세표준을 30%만큼 줄이는 방식이라 실제 절감액은 한계세율만큼만 생깁니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">총급여 4,000만·6,000만·8,500만 원이면 월세 세액공제는 얼마인가요?</h2>
+          <p>연 월세 840만원(월 70만원), 전용 59㎡, 기준시가 3억 5,000만원, 무주택 세대주 조건입니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>총급여별 월세 세액공제 vs 현금영수증 (연 월세 840만원)</caption>
+              <thead>
+              <tr>
+                <th scope="col">총급여</th>
+                <th scope="col" class="num" data-check="#report-rows|월세 세액공제액">월세 세액공제액</th>
+                <th scope="col" class="num" data-check="#report-rows|세액공제 순절감">세액공제 순절감</th>
+                <th scope="col" class="num" data-check="#report-rows|현금영수증 순절감">현금영수증 순절감</th>
+                <th scope="col" class="num" data-check="#total-amount">유리한 쪽</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#r-salary": "40000000"}'>
+                <td>4,000만원</td>
+                <td class="num">1,428,000<span class="u">원</span></td>
+                <td class="num">1,427,800<span class="u">원</span></td>
+                <td class="num">148,500<span class="u">원</span></td>
+                <td class="num">1,427,800<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#r-salary": "60000000"}'>
+                <td>6,000만원</td>
+                <td class="num">1,260,000<span class="u">원</span></td>
+                <td class="num">1,243,000<span class="u">원</span></td>
+                <td class="num">148,500<span class="u">원</span></td>
+                <td class="num">1,243,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#r-salary": "85000000"}'>
+                <td>8,500만원</td>
+                <td class="num">0<span class="u">원</span></td>
+                <td class="num">0<span class="u">원</span></td>
+                <td class="num">237,600<span class="u">원</span></td>
+                <td class="num">237,600<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">총급여 8,000만원을 넘으면 세액공제율이 0%가 되어 현금영수증 소득공제로 돌리는 편이 낫습니다. 표의 마지막 열은 두 방식 중 유리한 쪽의 순절감액입니다.</p>
+          <h2 class="q">월세 세액공제 요건은 하나만 빠져도 못 받나요?</h2>
+          <p>네. 무주택 세대주, 총급여 8,000만원 이하, 전용 85㎡ 이하(자녀 3명 이상 100㎡) 또는 기준시가 4억원 이하를 모두 만족해야 합니다. 면적과 기준시가는 둘 중 하나만 맞아도 됩니다.</p>
         </div>
       </div>
 

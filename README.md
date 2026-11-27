@@ -40,6 +40,7 @@ web/life-calc/
 ├─ assets/<slug>.js            계산기별 로직 15종
 ├─ tools/run-verify.sh         /sempan/ 서브경로로 로컬 서버 기동 → 검증 → 종료
 ├─ tools/verify.py             Playwright 전수 검증·스크린샷 (400여 개 체크)
+├─ tools/examples.py           실전 예시표 생성(gen)·검산(check) — 표 숫자를 페이지 JS로 다시 계산해 대조
 ├─ tools/apply-ga.py           GA4 측정 ID를 19페이지 <head>에 삽입·교체
 ├─ tools/check-ga.py           GA4 태그·이벤트 전용 검증 (13항목)
 ├─ tools/detail-shots.py       요소 단위 확대 캡처
@@ -87,6 +88,19 @@ sh web/life-calc/tools/run-verify.sh
 - `file://` 및 로컬 검증 서버(`localhost`·`127.0.0.1`·`::1`)에서는 `ga-disable-G-FY7JKTCH7W`로 전송을 끕니다. 검증 트래픽이 실제 통계에 섞이지 않습니다.
 - 기록 이벤트(`assets/site.js`, `gtag` 없으면 조용히 통과): `page_view`(자동) · `calc_run`(입력 변경 0.8초 디바운스, `page`·`changes`) · `preset_click`(`preset` 이름) · `related_click`(`from`·`to`) · `copy_result` · `mbar_click` · `filter_click`(홈 카테고리).
 - GA 전용 검증: `LD_LIBRARY_PATH=/workspace/scratch/sysroot/usr/lib/x86_64-linux-gnu python3 tools/check-ga.py`
+
+### 실전 예시표 검산
+
+계산기 15종에는 각 1개의 **실전 계산 예시표**(`table.data.example`)와 3개의 **질문형 H2**(`.detail-body h2.q`)가 있습니다.
+
+```sh
+LD_LIBRARY_PATH=/workspace/scratch/sysroot/usr/lib/x86_64-linux-gnu python3 tools/examples.py check
+```
+
+- 각 표 행은 `data-in` 속성에 그 값을 만든 입력값(JSON)을, 각 열 머리글은 `data-check` 속성에 값을 읽어 올 위치(`#total-amount`, `#report-rows|행 라벨`)를 들고 있습니다.
+- `check`는 그 입력값을 자체 서버(8129)의 페이지에 다시 넣고 `data-check` 위치에서 값을 읽어 표의 숫자와 **1원 단위까지** 대조합니다(15페이지 · 196셀).
+- 표 숫자를 바꿀 때는 `gen`으로 다시 생성합니다(마커 `<!-- EXAMPLE:START -->`~`<!-- EXAMPLE:END -->` 사이를 교체). 입력 시나리오는 `SPECS`에 있습니다.
+- 390px에서 예시표는 `table-wrap` 안에서 넘치지 않습니다(`min-width: 0` + 560px 이하 축소 서체).
 
 ## 값 갱신
 

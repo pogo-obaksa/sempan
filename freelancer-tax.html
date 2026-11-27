@@ -292,6 +292,59 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">3.3%를 떼고 받은 프리랜서가 5월에 세금을 더 내는 이유는 무엇인가요?</h2>
+          <p>3.3%는 수입 전체에 대한 원천징수일 뿐, 실제 세금은 경비율과 각종 공제를 반영한 종합소득세로 정해집니다. 수입이 크고 경비·공제가 적으면 결정세액이 기납부세액보다 커져 추가로 내고, 반대면 환급받습니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">프리랜서 연 수입 3,000만·5,000만·1억 원이면 5월 정산은 얼마인가요?</h2>
+          <p>단순경비율 60%와 기준경비율 20%를 각각 적용하고, 기본공제는 본인과 부양가족 1명(300만원)만 넣은 조건입니다. 국민연금·노란우산공제는 0원입니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>연 수입별 5월 정산 (기납부 3.3% · 지방소득세 포함)</caption>
+              <thead>
+              <tr>
+                <th scope="col">연 수입 · 경비율</th>
+                <th scope="col" class="num" data-check="#report-rows|소득금액">소득금액</th>
+                <th scope="col" class="num" data-check="#report-rows|결정세액">결정세액</th>
+                <th scope="col" class="num" data-check="#report-rows|기납부세액">기납부세액</th>
+                <th scope="col" class="num" data-check="#total-amount">5월 정산</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#f-income": "30000000", "#f-preset": "simple"}'>
+                <td>3,000만 · 단순 60%</td>
+                <td class="num">12,000,000<span class="u">원</span></td>
+                <td class="num">517,000<span class="u">원</span></td>
+                <td class="num">990,000<span class="u">원</span></td>
+                <td class="num">473,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#f-income": "50000000", "#f-preset": "simple"}'>
+                <td>5,000만 · 단순 60%</td>
+                <td class="num">20,000,000<span class="u">원</span></td>
+                <td class="num">1,342,000<span class="u">원</span></td>
+                <td class="num">1,650,000<span class="u">원</span></td>
+                <td class="num">308,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#f-income": "100000000", "#f-preset": "standard"}'>
+                <td>1억 · 기준 20%</td>
+                <td class="num">80,000,000<span class="u">원</span></td>
+                <td class="num">13,915,000<span class="u">원</span></td>
+                <td class="num">3,300,000<span class="u">원</span></td>
+                <td class="num">−10,615,000<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">양수면 환급, 음수면 추가납부입니다. 실제 경비율은 업종과 수입 규모에 따라 달라지므로 계산 조건에서 직접 입력해 확인하세요.</p>
+          <h2 class="q">직전연도 수입이 2,400만원이면 단순경비율을 쓸 수 있나요?</h2>
+          <p>수입이 2,400만원 이하이면 업종별 단순경비율을 적용할 수 있고, 이를 넘으면 원칙적으로 기준경비율이나 복식부기 대상입니다. 업종에 따라 기준 금액이 다르므로 신고 전 국세청 고시를 확인하세요.</p>
         </div>
       </div>
 

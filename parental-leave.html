@@ -267,6 +267,67 @@
             <summary><span>적용 계산식 5단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">육아휴직 급여는 6개월이 지나면 왜 줄어드나요?</h2>
+          <p>1~6개월은 통상임금의 100%를 지급하되 상한(1~3개월 250만원, 4~6개월 200만원)을 두고, 7개월부터는 80%에 상한 160만원이 적용됩니다. 산정액이 70만원보다 낮으면 하한 70만원으로 올려 지급합니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">통상임금 180만·220만·350만 원이면 육아휴직 12개월 총액은 얼마인가요?</h2>
+          <p>같은 12개월이라도 통상임금이 상한을 넘는지에 따라 총액이 달라집니다. 아래는 상한에 걸리는 구간과 그렇지 않은 구간을 나란히 놓은 예입니다. 2025년 1월 1일 이후 휴직분은 사후지급금 없이 매달 전액 지급됩니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>유형·통상임금별 12개월 총 수령액</caption>
+              <thead>
+              <tr>
+                <th scope="col">유형 · 통상임금</th>
+                <th scope="col" class="num" data-check="#report-rows|1~3개월 소계">1~3개월 소계</th>
+                <th scope="col" class="num" data-check="#report-rows|4~6개월 소계">4~6개월 소계</th>
+                <th scope="col" class="num" data-check="#total-amount">12개월 총액</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#p-wage": "1800000", "#p-months": "12", ".segmented button[data-mode=\"general\"]": "1"}'>
+                <td>일반 · 180만원</td>
+                <td class="num">5,400,000<span class="u">원</span></td>
+                <td class="num">5,400,000<span class="u">원</span></td>
+                <td class="num">19,440,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#p-wage": "2200000", "#p-months": "12", ".segmented button[data-mode=\"general\"]": "1"}'>
+                <td>일반 · 220만원</td>
+                <td class="num">6,600,000<span class="u">원</span></td>
+                <td class="num">6,000,000<span class="u">원</span></td>
+                <td class="num">22,200,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#p-wage": "3500000", "#p-months": "12", ".segmented button[data-mode=\"general\"]": "1"}'>
+                <td>일반 · 350만원</td>
+                <td class="num">7,500,000<span class="u">원</span></td>
+                <td class="num">6,000,000<span class="u">원</span></td>
+                <td class="num">23,100,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#p-wage": "3000000", "#p-months": "12", ".segmented button[data-mode=\"six\"]": "1"}'>
+                <td>6+6 · 300만원</td>
+                <td class="num">8,000,000<span class="u">원</span></td>
+                <td class="num">9,000,000<span class="u">원</span></td>
+                <td class="num">26,600,000<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#p-wage": "3000000", "#p-months": "12", ".segmented button[data-mode=\"single\"]": "1"}'>
+                <td>한부모 · 300만원</td>
+                <td class="num">9,000,000<span class="u">원</span></td>
+                <td class="num">6,000,000<span class="u">원</span></td>
+                <td class="num">24,600,000<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">6+6은 자녀 생후 18개월 안에 부모가 함께 써야 하고, 상한은 부모 각각에게 적용됩니다.</p>
+          <h2 class="q">6+6 부모육아휴직제는 부부가 꼭 같이 써야 하나요?</h2>
+          <p>부모가 모두 육아휴직을 써야 6+6 상한(250·250·300·350·400·450만원)이 적용됩니다. 한 사람만 쓰면 일반 육아휴직 상한이 적용되고, 7개월째부터는 6+6도 일반 기준으로 돌아갑니다.</p>
         </div>
       </div>
 

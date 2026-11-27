@@ -306,6 +306,59 @@
             <summary><span>적용 계산식 6단계</span><span class="fold-hint">입력값이 식에 그대로 반영됩니다</span></summary>
             <ol class="steps" id="steps"></ol>
           </details>
+          <h2 class="q">같은 금리라도 상환방식에 따라 총이자가 달라지나요?</h2>
+          <p>같은 금리·기간이라도 원금을 언제 갚는지에 따라 이자가 붙는 잔액이 달라집니다. 원금균등이 총이자를 가장 적게 내고, 만기일시는 원금을 끝까지 갚지 않아 가장 많이 냅니다.</p>
+        </div>
+      </div>
+
+      <!-- 실전 계산 예시 -->
+      <div class="detail-block">
+        <div class="detail-label">실전 예시</div>
+        <div class="detail-body">
+          <h2 class="q">3억을 연 4.5%로 30년 빌리면 방식별 총이자는 얼마인가요?</h2>
+          <p>거치기간 없이 30년 동안 갚는 조건입니다. 대출금액이 커질수록 세 방식의 총이자 차이도 함께 커집니다.</p>
+          <!-- EXAMPLE:START -->
+          <div class="table-wrap">
+            <table class="data example">
+              <caption>대출금액별 총이자 비교 (연 4.5% · 30년 · 거치 없음)</caption>
+              <thead>
+              <tr>
+                <th scope="col">대출금액</th>
+                <th scope="col" class="num" data-check="#total-amount">원리금균등 총이자</th>
+                <th scope="col" class="num" data-check="#report-rows|원금균등 총이자">원금균등 총이자</th>
+                <th scope="col" class="num" data-check="#report-rows|만기일시 총이자">만기일시 총이자</th>
+                <th scope="col" class="num" data-check="#report-rows|원리금균등 대비 절감">원금균등 절감액</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr data-in='{"#l-principal": "200000000"}'>
+                <td>2억원</td>
+                <td class="num">164,813,423<span class="u">원</span></td>
+                <td class="num">135,375,000<span class="u">원</span></td>
+                <td class="num">270,000,000<span class="u">원</span></td>
+                <td class="num">29,438,423<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#l-principal": "300000000"}'>
+                <td>3억원</td>
+                <td class="num">247,220,135<span class="u">원</span></td>
+                <td class="num">203,062,500<span class="u">원</span></td>
+                <td class="num">405,000,000<span class="u">원</span></td>
+                <td class="num">44,157,635<span class="u">원</span></td>
+              </tr>
+              <tr data-in='{"#l-principal": "500000000"}'>
+                <td>5억원</td>
+                <td class="num">412,033,558<span class="u">원</span></td>
+                <td class="num">338,437,500<span class="u">원</span></td>
+                <td class="num">675,000,000<span class="u">원</span></td>
+                <td class="num">73,596,058<span class="u">원</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- EXAMPLE:END -->
+          <p class="help">원금균등은 첫 달 납입액이 가장 크고 매달 줄어듭니다. 만기일시는 매달 이자만 내다가 마지막에 원금을 한꺼번에 갚습니다.</p>
+          <h2 class="q">거치기간을 두면 총이자는 얼마나 늘어나나요?</h2>
+          <p>거치기간에는 이자만 내므로 원금이 줄지 않아 그만큼 이자가 더 붙습니다. 계산 조건에서 거치기간을 넣으면 세 방식 모두에 반영됩니다.</p>
         </div>
       </div>
 
