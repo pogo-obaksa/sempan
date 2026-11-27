@@ -3,6 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GA4:S -->
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7JKTCH7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  /* 로컬 파일(file://)·로컬 검증 서버에서는 통계에 섞이지 않도록 전송을 끕니다. */
+  if (location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window['ga-disable-G-FY7JKTCH7W'] = true;
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-FY7JKTCH7W');
+</script>
+<!-- GA4:E -->
 <title>2026 육아기 근로시간 단축 급여 계산기 (최초 10시간 100%) | 셈판</title>
 <meta name="description" content="2026년 개정 기준으로 육아기 근로시간 단축 급여를 계산합니다. 최초 10시간 단축분은 통상임금 100%(월 250만 한도), 나머지는 80%(160만 한도), 하한 50만원을 적용하고 회사 급여와 합산합니다.">
 <meta name="theme-color" content="#F6F5F1">

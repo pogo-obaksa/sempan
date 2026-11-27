@@ -4,6 +4,18 @@
   var C = window.LIFECALC;
   var nf = new Intl.NumberFormat('ko-KR');
 
+  /* ---------- GA4 이벤트 ----------
+   * 태그가 없거나(로컬·차단 환경) 전송이 꺼져 있어도 절대 에러가 나지 않도록 가드합니다.
+   * 페이지뷰는 gtag config가 자동 전송하고, 아래 상호작용만 따로 기록합니다.
+   */
+  function track(name, params) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    } catch (e) { /* 통계 전송 실패가 계산 기능에 영향을 주지 않게 합니다. */ }
+  }
+  var slugMatch = /([^/]+)\.html$/.exec(window.location.pathname || '');
+  var pageSlug = slugMatch ? slugMatch[1] : 'home';
+
   function toNumber(value) {
     var digits = String(value == null ? '' : value).replace(/[^0-9.-]/g, '');
     var n = parseFloat(digits);
@@ -124,6 +136,7 @@
     filters.forEach(function (btn) {
       btn.addEventListener('click', function () {
         applyFilter(btn.getAttribute('data-filter'), btn);
+        track('filter_click', { page: pageSlug, filter: btn.getAttribute('data-filter') });
       });
     });
 
@@ -150,6 +163,7 @@
     var target = mbar.getAttribute('data-target') || '.total';
     if (go) {
       go.addEventListener('click', function () {
+        track('mbar_click', { page: pageSlug });
         var el = document.querySelector(target);
         if (!el) return;
         try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
@@ -163,6 +177,7 @@
     btn.addEventListener('click', function () {
       var src = document.getElementById(btn.getAttribute('data-copy'));
       if (!src) return;
+      track('copy_result', { page: pageSlug });
       copyText(src.textContent.replace(/\s+\n/g, '\n').trim(), btn);
     });
   });
@@ -321,6 +336,36 @@
       });
 
       presetBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      track('preset_click', {
+        page: pageSlug,
+        preset: String(btn.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40)
+      });
     });
   });
+
+  /* 연관 계산기 카드 이동 */
+  document.querySelectorAll('a.related-card').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var base = String(a.getAttribute('data-href') || a.getAttribute('href') || '').split('?')[0].split('#')[0];
+      var to = base.replace(/^.*\//, '').replace(/\.html$/, '') || base;
+      track('related_click', { from: pageSlug, to: to });
+    });
+  });
+
+  /* 계산 실행 — 입력이 멈춘 뒤 한 번만 기록합니다(프리셋 클릭도 포함). */
+  var calcPanel = document.querySelector('.panel');
+  if (calcPanel && document.getElementById('total-amount')) {
+    var runTimer = null;
+    var runCount = 0;
+    var scheduleRun = function () {
+      runCount += 1;
+      window.clearTimeout(runTimer);
+      runTimer = window.setTimeout(function () {
+        track('calc_run', { page: pageSlug, changes: runCount });
+        runCount = 0;
+      }, 800);
+    };
+    calcPanel.addEventListener('input', scheduleRun, true);
+    calcPanel.addEventListener('change', scheduleRun, true);
+  }
 })();

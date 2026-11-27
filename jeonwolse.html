@@ -3,6 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GA4:S -->
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7JKTCH7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  /* 로컬 파일(file://)·로컬 검증 서버에서는 통계에 섞이지 않도록 전송을 끕니다. */
+  if (location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window['ga-disable-G-FY7JKTCH7W'] = true;
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-FY7JKTCH7W');
+</script>
+<!-- GA4:E -->
 <title>전월세 전환율 계산기 · 2026 갱신 5% 상한 | 셈판</title>
 <meta name="description" content="2026.11.26 한국은행 기준금리 3.25% 기준 법정 전월세전환율 5.25%로 전세↔반전세 월세와 계약갱신 5% 증액 상한을 계산합니다. 산출식과 법령 출처 공개.">
 <meta name="theme-color" content="#F6F5F1">

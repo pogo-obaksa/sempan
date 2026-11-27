@@ -3,6 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GA4:S -->
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7JKTCH7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  /* 로컬 파일(file://)·로컬 검증 서버에서는 통계에 섞이지 않도록 전송을 끕니다. */
+  if (location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window['ga-disable-G-FY7JKTCH7W'] = true;
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-FY7JKTCH7W');
+</script>
+<!-- GA4:E -->
 <title>맞벌이 부양가족 인적공제 몰아주기 비교 계산기 | 셈판</title>
 <meta name="description" content="부부 각자 총급여와 자녀·부모님 수를 넣으면 A 몰아주기, B 몰아주기, 최적 분산의 과세표준과 산출세액(지방소득세 포함)을 비교합니다.">
 <meta name="theme-color" content="#F6F5F1">

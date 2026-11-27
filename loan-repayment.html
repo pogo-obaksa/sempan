@@ -3,6 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GA4:S -->
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7JKTCH7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  /* 로컬 파일(file://)·로컬 검증 서버에서는 통계에 섞이지 않도록 전송을 끕니다. */
+  if (location.protocol === 'file:' ||
+      /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window['ga-disable-G-FY7JKTCH7W'] = true;
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-FY7JKTCH7W');
+</script>
+<!-- GA4:E -->
 <title>대출 상환방식 총이자 비교 계산기 (원리금균등·원금균등·만기일시) | 셈판</title>
 <meta name="description" content="대출원금·연이자율·기간·거치기간을 넣으면 원리금균등·원금균등·만기일시의 첫 달·마지막 달 납입액, 총이자, 원리금균등 대비 절감액과 연차별 잔액을 비교합니다.">
 <meta name="theme-color" content="#F6F5F1">
