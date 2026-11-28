@@ -20,7 +20,7 @@
 <!-- GA4:E -->
 <title>셈판 — 부동산·세무·출산육아·근로금융 계산기 15종 (2026.11.26 기준)</title>
 <meta name="description" content="전월세 전환율·갱신 5% 상한, 카드 소득공제, 전세 vs 반전세, 이사 필요 현금, 청약 가점, 신생아 특례대출, 월세 세액공제, 프리랜서 3.3%, 육아휴직, 부모급여, 육아기 단축급여, 주휴수당, 퇴직금, 대출 상환방식까지. 적용 법령과 기준일, 산출 과정을 함께 공개하는 2026년 기준 계산 노트.">
-<meta name="theme-color" content="#F6F5F1">
+<meta name="theme-color" content="#F6F8FB">
 <link rel="canonical" href="https://pogo-obaksa.github.io/sempan/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="셈판">
@@ -71,14 +71,7 @@
 <header class="site-header">
   <div class="wrap header-in">
     <a class="brand" href="index.html">
-      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
-        <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
-        <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
-        <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-        <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-        <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-        <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
-      </svg>
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="6" fill="#2563EB"/><path d="M6 5.8h8M6 9.2h8M6 12.6h4.6" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
       <span class="brand-text">
         <span class="brand-name">셈판</span>
         <span class="brand-sub">세무·주거 계산노트</span>
@@ -107,20 +100,34 @@
   <div class="wrap">
 
     <section class="masthead">
-      <div>
-        <p class="eyebrow">2026년 기준 · 부동산·세무·육아 실무 계산</p>
-        <h1 class="masthead-title">돈이 걸린 계산은,<br>근거까지 같이 봅니다.</h1>
+      <div class="masthead-in">
+        <p class="eyebrow">2026년 기준 · 무료 계산기 15종</p>
+        <h1 class="masthead-title">돈이 걸린 계산,<br>영수증 한 장으로.</h1>
         <p class="masthead-lede">
-          전월세 전환, 연말정산 공제, 이사 현금, 청약 가점처럼 결과 한 줄로는 판단이 서지 않는 계산을 다룹니다.
-          모든 계산기에 <strong>적용 법령과 기준일</strong>을 표시하고, 결과와 함께
-          <strong>단계별 산출식과 출처</strong>를 공개합니다. 숫자를 바꾸면 근거도 같이 바뀝니다.
+          전월세 전환부터 연말정산 공제, 이사 현금, 육아지원금, 퇴직금까지.
+          궁금한 계산을 고르면 <strong>입력한 값 그대로</strong> 항목별 영수증이 나옵니다.
+          적용 법령과 기준일은 결과 아래에 함께 적어 둡니다.
         </p>
-      </div>
 
+        <div class="quick" aria-label="많이 찾는 계산">
+          <span class="quick-label">바로 계산</span>
+          <a class="quick-chip" href="jeonwolse.html">전월세 전환율 <span class="arrow">→</span></a>
+          <a class="quick-chip" href="card-ratio.html">카드 소득공제 <span class="arrow">→</span></a>
+          <a class="quick-chip" href="newborn-loan.html">신생아 특례대출 <span class="arrow">→</span></a>
+          <a class="quick-chip" href="parental-leave.html">육아휴직 급여 <span class="arrow">→</span></a>
+          <a class="quick-chip" href="severance-tax.html">퇴직금 실수령 <span class="arrow">→</span></a>
+          <a class="quick-chip" href="weekly-holiday-pay.html">주휴수당 <span class="arrow">→</span></a>
+        </div>
+
+        <p class="hero-note">입력한 값은 브라우저 안에서만 계산되고, <strong>어디에도 저장·전송되지 않습니다.</strong></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="ref-title">
       <aside class="factsheet" aria-label="2026.11.26 기준 요약">
         <div class="factsheet-cap">
-          <span>기준 요약 / REFERENCE</span>
-          <span>2026.11.26</span>
+          <span id="ref-title">2026년 기준 요약</span>
+          <span>2026.11.26 갱신</span>
         </div>
         <dl>
           <div class="fact">
@@ -156,15 +163,15 @@
             <dd><span class="v">0.3~0.7%</span><span class="n">매매 0.4~0.7 · 임대차 0.3~0.6</span></dd>
           </div>
         </dl>
-        <p class="factsheet-foot">법령·고시 개정 시 이 값들을 먼저 갱신하고, 각 계산기의 산출식에 그대로 반영합니다.</p>
+        <p class="factsheet-foot">법령·고시가 개정되면 이 값들을 먼저 갱신하고, 15종 계산기의 산출식에 그대로 반영합니다.</p>
       </aside>
     </section>
 
-    <section aria-labelledby="dir-title">
+    <section aria-labelledby="dir-title" id="directory">
       <div class="section-head">
         <div>
-          <h2 class="section-title" id="dir-title">계산기 디렉터리</h2>
-          <p class="section-desc">부동산·세무·출산육아·근로금융 15종을 모두 공개했습니다. 같은 기준·같은 검수 절차로 산출식과 출처를 관리합니다.</p>
+          <h2 class="section-title" id="dir-title">어떤 계산이 필요하세요?</h2>
+          <p class="section-desc">부동산·세무·출산육아·근로금융 15종. 같은 기준과 같은 검수 절차로 산출식·출처를 관리합니다.</p>
         </div>
         <span class="section-count">15종 운영 중</span>
       </div>
@@ -267,7 +274,7 @@
             <p>월별 수령액과 부부 합산 총수령액을 사후지급금 폐지 기준으로 계산합니다.</p>
             <div class="calc-meta">고용보험법 시행령 §95 · 하한 70만원</div>
           </div>
-          <div class="calc-action"><span class="calc-cat">육아·근로</span><a class="btn-go" href="parental-leave.html">계산하기 <span class="arrow">→</span></a></div>
+          <div class="calc-action"><span class="calc-cat">출산·육아</span><a class="btn-go" href="parental-leave.html">계산하기 <span class="arrow">→</span></a></div>
         </article>
 
         <article class="calc-row" data-cat="work">
@@ -335,17 +342,17 @@
 
     <section class="method" id="method" aria-label="계산 방식">
       <div class="method-item">
-        <div class="method-k">01 / 기준일</div>
+        <div class="method-k">01 · 기준일</div>
         <h4>모든 결과에 기준일을 붙입니다</h4>
         <p>기준금리·세법·고시가 바뀌면 상수 파일 한 곳에서 갱신해, 페이지마다 같은 값을 쓰도록 관리합니다.</p>
       </div>
       <div class="method-item">
-        <div class="method-k">02 / 산출 과정</div>
+        <div class="method-k">02 · 산출 과정</div>
         <h4>결과가 나온 경로를 숨기지 않습니다</h4>
         <p>단계별 계산식에 입력한 값이 그대로 들어가 있습니다. 숫자를 바꾸면 식과 결과가 함께 갱신됩니다.</p>
       </div>
       <div class="method-item">
-        <div class="method-k">03 / 출처</div>
+        <div class="method-k">03 · 출처</div>
         <h4>원문으로 돌아갈 수 있게 둡니다</h4>
         <p>국가법령정보센터 조문, 국세청 연말정산 안내, 청약홈·고용24 고시를 계산기마다 연결합니다.</p>
       </div>
@@ -359,14 +366,7 @@
     <div class="footer-in">
       <div class="footer-brand">
         <a class="brand" href="index.html">
-          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
-            <rect x="1.5" y="3.5" width="18" height="14" rx="1.6" stroke="#0D5C46" stroke-width="1.3"/>
-            <path d="M7 3.5v14M11 3.5v14M15 3.5v14" stroke="#0D5C46" stroke-width="0.9" opacity="0.5"/>
-            <rect x="5.6" y="5.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-            <rect x="9.6" y="8.9" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-            <rect x="13.6" y="6.6" width="2.8" height="2.1" rx="0.5" fill="#0D5C46"/>
-            <rect x="13.6" y="12.2" width="2.8" height="2.1" rx="0.5" fill="#0D5C46" opacity="0.45"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="6" fill="#2563EB"/><path d="M6 5.8h8M6 9.2h8M6 12.6h4.6" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
           <span class="brand-text"><span class="brand-name">셈판</span><span class="brand-sub">세무·주거 계산노트</span></span>
         </a>
         <p class="footer-note">법령과 고시를 기준으로 산출 과정을 공개하는 실무형 계산 노트. 2026년 귀속·2026.11.26 기준으로 관리합니다.</p>
