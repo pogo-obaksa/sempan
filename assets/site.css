@@ -307,7 +307,7 @@ input,
 
 .hero-note {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   margin: 18px 0 0;
   font-size: 12px;
@@ -315,11 +315,14 @@ input,
   color: var(--faint);
 }
 
+.hero-note > span { min-width: 0; }
+
 .hero-note::before {
   content: "";
   flex: none;
   width: 14px;
   height: 14px;
+  margin-top: 2px;
   border-radius: 50%;
   background: var(--ok-tint);
   border: 1px solid var(--ok-line);
